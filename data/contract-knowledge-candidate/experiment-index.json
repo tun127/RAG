@@ -1,0 +1,397 @@
+{
+  "schema_version": "1.0",
+  "purpose": "local_development_experiment",
+  "production_status": "not_approved",
+  "public_references": [
+    {
+      "document_id": "CK01",
+      "version": "2020-05-28",
+      "ranges": [
+        [
+          "第四百六十五条",
+          "第十章　供用电、水、气、热力合同"
+        ]
+      ],
+      "scope": "仅合同通则及买卖章465—647条，整条含条件例外；本地版本参考，其他总则/程序规范未覆盖",
+      "path": "local-runtime/experiment/CK01.json",
+      "sha256": "36610cff1502182e1fb121b52a9880e85e185f967017066ca36b9fade86102d9",
+      "source_sha256": "baf60cd0e4f3e3ffc2ca6533731fc8faa246db0b47b694ef00fa0053cf56b462",
+      "production_status": "not_approved",
+      "local_only": true
+    },
+    {
+      "document_id": "CK02",
+      "version": "2025-03-17",
+      "ranges": [
+        [
+          "第一章　总　　则",
+          "【返回顶部】"
+        ]
+      ],
+      "scope": "完整条例1—37条；先核验订约规模；不得将机关事业单位期限自动用于企业",
+      "path": "local-runtime/experiment/CK02.json",
+      "sha256": "d407867a70069d6db9ed5ee093d3a88ed1c3a30291685f95f691cbe55dcb1312",
+      "source_sha256": "3ee6f8b12670faadfa0b26614079752dcda0c1d77af1caccfaf18c922699af72",
+      "production_status": "not_approved",
+      "local_only": true
+    },
+    {
+      "document_id": "CK03",
+      "version": "2020-12-29",
+      "ranges": [
+        [
+          "为正确审理买卖合同纠纷案件",
+          "上一篇"
+        ]
+      ],
+      "scope": "完整解释正文1—33条及前言；特殊动产/电子信息/分期付款等仅事实符合时适用",
+      "path": "local-runtime/experiment/CK03.json",
+      "sha256": "3932192aa7c342a974c108027305ffd047aea5fd82a956a7aa7219782d97f068",
+      "source_sha256": "d525031bb5d137d6b874b21ede1d94d78a46d6b3360933fbb6f514eb12521461",
+      "production_status": "not_approved",
+      "local_only": true
+    }
+  ],
+  "synthetic_policies": [
+    {
+      "document_id": "DP-PAY",
+      "version": "0.2.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-PAY.md",
+      "sha256": "8f1bbddeae2349b4e4f5bdcd4e9b8dc9debe6b3e86081ec0f5b5e39e57b1f81e",
+      "source_mapping": [
+        "CK02",
+        "CK06"
+      ],
+      "source_use": "法律作边界参考；机构制度只参考流程问题，不移植权限或期限",
+      "thresholds": "所有内部期限和审批角色均为演示设定",
+      "policy_dependencies": [
+        "DP-ACC",
+        "DP-ARCH",
+        "DP-EXC"
+      ],
+      "owner": "财务负责人",
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-ACC",
+      "version": "0.2.1",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-ACC.md",
+      "sha256": "a76841d5cc9363bf3f10723d28139584aaf6e24867e1b5e25abde5aa87811624",
+      "source_mapping": [
+        "CK01",
+        "CK03",
+        "CK08"
+      ],
+      "source_use": "法律作边界参考；机构制度只参考流程问题，不移植权限或期限",
+      "thresholds": "所有内部期限和审批角色均为演示设定",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-EXC",
+        "DP-PAY",
+        "DP-WAR"
+      ],
+      "owner": "质量负责人",
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-EXC",
+      "version": "0.2.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-EXC.md",
+      "sha256": "991c49494f96c613a90764153d23d3ce3cb57c5b445cff9514bf5020828a8144",
+      "source_mapping": [
+        "CK09",
+        "CK17"
+      ],
+      "source_use": "法律作边界参考；机构制度只参考流程问题，不移植权限或期限",
+      "thresholds": "所有内部期限和审批角色均为演示设定",
+      "policy_dependencies": [
+        "DP-ACC",
+        "DP-ARCH",
+        "DP-PAY"
+      ],
+      "owner": "企业负责人",
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-PROC",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-PROC.md",
+      "sha256": "e673ceec817ff7586edb438b166296c11d53aa9d7161898996a77970d32870d7",
+      "source_mapping": [
+        "CK06",
+        "CK07"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "采购负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-AUTH",
+        "DP-EXC",
+        "DP-SUP"
+      ],
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-AUTH",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-AUTH.md",
+      "sha256": "60a2f74efbc6b6e02749095a01a2aab0d4b7296c811ea441fd35f7162958b485",
+      "source_mapping": [
+        "CK05",
+        "CK08"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "企业负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-CHG",
+        "DP-EXC"
+      ],
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-SUP",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-SUP.md",
+      "sha256": "a9386bd1e7604a03c7cf17bf20a292a7dcf24d97ca35ed18110a78688a694b95",
+      "source_mapping": [
+        "CK06",
+        "CK16"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "采购负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-EXC"
+      ],
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-TPL",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-TPL.md",
+      "sha256": "d7a371f7fd8029fba700121cb8cdb49a99e70cec9a25a21ac3be4c2465245bbc",
+      "source_mapping": [
+        "CK17"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "法务负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-CHG",
+        "DP-EXC",
+        "DP-REV"
+      ],
+      "source_review_todos": [
+        "CK11旧模板未核，不作确定依据"
+      ]
+    },
+    {
+      "document_id": "DP-REV",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-REV.md",
+      "sha256": "7c05ad34631b50165f8b084849d4d60acef66df1954d5ed4e8384c0210b0a829",
+      "source_mapping": [
+        "CK01",
+        "CK03"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "法务负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-EXC"
+      ],
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-DEL",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-DEL.md",
+      "sha256": "eff0747e26ee6e8782112618986d510d43f9dfa51ceec277fe793fcfa041063c",
+      "source_mapping": [
+        "CK01",
+        "CK03"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "物流负责人",
+      "policy_dependencies": [
+        "DP-ACC",
+        "DP-ARCH",
+        "DP-EXC"
+      ],
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-WAR",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-WAR.md",
+      "sha256": "829f5f5719f344575192dd58f5c7328fc9733dac65116cfda2bc6f431cd3ff3a",
+      "source_mapping": [
+        "CK01"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "质量负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-EXC",
+        "DP-PAY"
+      ],
+      "source_review_todos": [
+        "CK04修法状态、CK11旧模板未核，不作法定质保结论"
+      ]
+    },
+    {
+      "document_id": "DP-CHG",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-CHG.md",
+      "sha256": "8ce3a26909944d19818c6ece2400d87c7f7656a4f58c1a8bab972304c91f573a",
+      "source_mapping": [
+        "CK01",
+        "CK09"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "合同负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-AUTH",
+        "DP-EXC"
+      ],
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-LIAB",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-LIAB.md",
+      "sha256": "f13424db05d329ab1d4f5768e82c3ce372675a8fecfb45c62487a846c8f8a0f3",
+      "source_mapping": [
+        "CK01",
+        "CK03"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "法务负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-EXC",
+        "DP-PAY"
+      ],
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-DISP",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-DISP.md",
+      "sha256": "b1209e2727beb12c145c15d1547c01c400467e8a3724d1171eedb11f86764f80",
+      "source_mapping": [
+        "CK01"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "法务负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-AUTH",
+        "DP-CHG",
+        "DP-EXC"
+      ],
+      "source_review_todos": [
+        "现行仲裁及程序法未核，不作条款效力结论"
+      ]
+    },
+    {
+      "document_id": "DP-ANN",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-ANN.md",
+      "sha256": "2f3890844b81b1b48783b0ae2293a393c31f6f0962017c432d1d3f83b57f9d7b",
+      "source_mapping": [
+        "CK01",
+        "CK03"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "合同负责人",
+      "policy_dependencies": [
+        "DP-ARCH",
+        "DP-CHG",
+        "DP-EXC",
+        "DP-TPL"
+      ],
+      "source_review_todos": []
+    },
+    {
+      "document_id": "DP-ARCH",
+      "version": "0.1.0",
+      "classification": "synthetic_demo_policy",
+      "status": "experimental_draft",
+      "production_status": "not_approved",
+      "path": "synthetic-demo-policy/DP-ARCH.md",
+      "sha256": "c819ca631e9bd8a885543169ff818be942b5ad4384f534e22e100b00f54044ba",
+      "source_mapping": [
+        "CK06",
+        "CK09",
+        "CK16"
+      ],
+      "source_use": "仅设计参考；未核验法律只列待办；机构规则不直接采纳",
+      "thresholds": "内部期限、比例、金额与角色为演示设定",
+      "owner": "档案负责人",
+      "policy_dependencies": [
+        "DP-EXC"
+      ],
+      "source_review_todos": []
+    }
+  ],
+  "snapshot_id": "demo-policies-20261108-complete-v1",
+  "namespace": "DP",
+  "fact_layer": "当前合同及明确提供材料；不得以公开规范或政策生成交易事实",
+  "regression_rule_relationship": "独立于原15条回归规则，不隐式覆盖期限或预期"
+}

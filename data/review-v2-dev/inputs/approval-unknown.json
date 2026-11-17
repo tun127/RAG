@@ -1,0 +1,9 @@
+{
+  "label": "SIMULATED",
+  "contract_text": "虚构开发案例，SIMULATED：含税价10000元、税率13%、人民币；收款主体为虚构供应商A，账户为演示账户0001。到货、质量验收并取得约定结算资料后60自然日付款；发票类型与出具时间单列约定，发票不单独证明质量验收，内部程序不改变到期义务。",
+  "materials": {
+    "approval_record": "unknown",
+    "technical_spec": "unknown"
+  },
+  "parse_coverage_complete": true
+}

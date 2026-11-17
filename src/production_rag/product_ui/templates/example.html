@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main_class %}report-page example-page{% endblock %}
+{% block main %}
+<div class="report-toolbar no-print">
+  <a href="{{ view.back_href }}">← 返回首页</a>
+  <div class="head-actions">
+    <a class="button button-small button-secondary" href="{{ view.print_href }}">打印示例</a>
+    <a class="button button-small button-secondary" href="/">返回首页</a>
+  </div>
+</div>
+{% with report = view %}
+  {% include "report_content.html" %}
+{% endwith %}
+{% endblock %}

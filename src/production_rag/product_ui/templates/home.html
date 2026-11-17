@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="simple-hero">
+  <h1>{{ view.product_name }}</h1>
+  <p class="lead">{{ view.tagline }}</p>
+
+  <form class="upload-card" method="post" action="/review?ticket={{ view.ticket }}" enctype="multipart/form-data">
+    <label class="file-drop">
+      <span class="file-title">选择采购合同</span>
+      <input name="file" type="file" accept=".docx,.pdf" required>
+      <span class="hint">DOCX 或文本型 PDF，最大 512 KiB；扫描件没有文字层，无法解析。</span>
+    </label>
+    <button class="button button-primary" type="submit">{{ view.button_label }}</button>
+    {% if view.live_enabled %}<button class="button button-secondary" type="submit" formaction="/review?ticket={{ view.ticket }}&mode=SIMULATED">体验模拟流程</button>{% endif %}
+    <p class="feedback" role="status"></p>
+    {% if view.live_enabled %}
+      <p class="hint">上传后自动解析并固定版本，调用服务端配置的模型审查六项；结果只是候选。</p>
+    {% else %}
+      <p class="hint">真实审查未启用：这个按钮只走流程演练，系统不会分析你上传的合同，也不会用模拟结果冒充真实审查。</p>
+    {% endif %}
+  </form>
+
+  {% if view.error %}
+    <div class="alert alert-danger" role="alert">
+      <strong>没有开始审查：{{ view.error.message }}</strong>
+      {% if view.error.name %}<p>文件：{{ view.error.name }}</p>{% endif %}
+      {% if view.error.reasons %}
+        <ul>{% for reason in view.error.reasons %}<li>{{ reason }}</li>{% endfor %}</ul>
+      {% endif %}
+      <p>修正后重新选择文件即可；这次没有产生审查记录，也不会调用模型。</p>
+    </div>
+  {% endif %}
+
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <h2>审查记录</h2>
+    <a class="subtle" href="/example">查看示例报告（人工构造）</a>
+  </div>
+  {% if view.has_runs %}
+    <ul class="record-list compact">
+      {% for run in view.runs %}
+        <li>
+          <a class="record-title" href="{{ run.href }}">{{ run.name }}</a>
+          <p class="record-meta">
+            <span class="mode-badge mode-{{ run.mode.tone }}">{{ run.mode.label }}</span>
+            <span class="pill pill-{{ run.status_tone }}">{{ run.status_label }}</span>
+            {{ run.created }}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="empty">尚无合同。选择一份采购合同即可开始；上传本身不会调用模型。</p>
+  {% endif %}
+</section>
+{% endblock %}

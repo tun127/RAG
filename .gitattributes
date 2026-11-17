@@ -1,0 +1,12 @@
+# Preserve bytes used by fixture digests across Windows checkouts.
+data/contract-demo/** -text
+evals/contract-m0-expected.jsonl -text
+docs/m0-evidence/** -text
+# Canonical source bytes are pinned by experiment-index.json.
+data/contract-knowledge-candidate/** -text
+evals/knowledge-baseline/** -text
+docs/contract-knowledge-corpus.md -text
+data/pilot-review-dev/** -text
+data/presign-review-dev/** -text
+# PDF byte offsets must survive checkout without line-ending conversion.
+docs/product-final-evidence-20261109/*.pdf binary

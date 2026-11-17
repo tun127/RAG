@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">证据原文</p>
+    <h1>{{ view.contract_name }}</h1>
+    <p class="record-meta">事项 {{ view.task_id }} · 版本 {{ view.version_short }} · {{ view.mode.label }}</p>
+  </div>
+  <a href="{{ view.back_href }}">← 返回当前事项</a>
+</div>
+<div class="panel">
+  {% with evidence = view.evidence %}
+    {% include "_evidence.html" %}
+  {% endwith %}
+</div>
+{% endblock %}

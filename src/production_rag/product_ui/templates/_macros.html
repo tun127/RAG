@@ -1,0 +1,51 @@
+{% macro pill(status) -%}
+<span class="pill pill-{{ status.tone }}">{{ status.label }}</span>
+{%- endmacro %}
+
+{% macro mode_badge(mode) -%}
+<span class="mode-badge mode-{{ mode.tone }}">{{ mode.label }}</span>
+{%- endmacro %}
+
+{% macro material_badge(material) -%}
+<span class="pill pill-{{ material.tone }}">{{ material.status_label }}</span>
+{%- endmacro %}
+
+{% macro citation_card(cite, interactive=False) -%}
+<article class="citation{% if cite.fixture_cross_topic %} is-fixture{% endif %}">
+  <div class="citation-meta">
+    <span class="role-tag">{{ cite.role }}</span>
+    <span>{{ cite.document_label }}</span>
+    {% if cite.heading %}<span class="dot">·</span><span>{{ cite.heading }}</span>{% endif %}
+    <span class="dot">·</span><span>版本 {{ cite.version_short }}</span>
+  </div>
+  {% if cite.valid %}
+    <blockquote class="quote">
+      {% for seg in cite.excerpt_segments %}{% if seg.mark %}<mark>{{ seg.text }}</mark>{% else %}{{ seg.text }}{% endif %}{% endfor %}
+    </blockquote>
+    {% if interactive %}
+      <div class="citation-actions">
+        {% if cite.anchor_url %}<a href="{{ cite.anchor_url }}" target="_blank" rel="noopener">查看解析原文</a>{% endif %}
+        <button type="button" class="link-button" data-locator="{{ cite.source_dom_id }}">在完整来源中定位</button>
+      </div>
+    {% endif %}
+    {% if cite.fixture_cross_topic %}
+      <p class="inline-warning">这是流程夹具统一追加的付款摘录，不是本事项的业务依据，也没有模型语义支持。</p>
+    {% endif %}
+  {% else %}
+    <blockquote class="quote quote-invalid">{{ cite.quote }}</blockquote>
+    <p class="inline-warning">{{ cite.invalid_reason }}；未显示高亮，不能作为有效证据。</p>
+  {% endif %}
+</article>
+{%- endmacro %}
+
+{% macro opinion_card(opinion) -%}
+<article class="opinion">
+  <div class="opinion-head">
+    <span class="pill pill-{{ opinion.tone }}">{{ opinion.decision_label }}</span>
+    <strong>{{ opinion.reviewer }}</strong>
+    <time>{{ opinion.saved_at }}</time>
+  </div>
+  <p>{{ opinion.note }}</p>
+  <small>{{ opinion.notice }}</small>
+</article>
+{%- endmacro %}

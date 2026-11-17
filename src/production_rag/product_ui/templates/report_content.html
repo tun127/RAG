@@ -1,0 +1,183 @@
+{% from "_macros.html" import pill, mode_badge, citation_card, opinion_card %}
+<article class="report">
+  <header class="report-head">
+    <p class="eyebrow">审查报告</p>
+    <h1>{{ report.report_title }}</h1>
+    <p class="report-subtitle">{{ report.report_subtitle }}</p>
+    <div class="report-badges">
+      {{ mode_badge(report.mode) }}
+      {{ pill(report.status) }}
+    </div>
+    <p class="record-meta">合同：{{ report.scope.contract_name }} · 版本 {{ report.scope.version_short }} · {{ report.scope.stage }}</p>
+    <p class="record-meta">{{ report.generated_note }}</p>
+  </header>
+
+  {% if report.example %}
+    <div class="alert alert-example">
+      <strong>示例报告 · 人工构造展示数据</strong>
+      <p>这份报告使用一份完整虚构合同和人工构造的事项、依据、定位与意见，用于展示页面结构。它不是模型输出，不是准确率成绩，也没有进入任何运行存储或评估统计。</p>
+    </div>
+  {% endif %}
+
+  <section class="report-section">
+    <h2>摘要</h2>
+    <p class="report-headline">{{ report.summary.headline }}</p>
+    <p>{{ report.summary.subline }}</p>
+    <div class="summary-chips">
+      {% for chip in report.summary.chips %}
+        <div class="summary-chip chip-{{ chip.tone }}"><strong>{{ chip.value }}</strong><span>{{ chip.label }}</span></div>
+      {% endfor %}
+    </div>
+    <p class="hint">{{ report.summary.note }}</p>
+  </section>
+
+  <section class="report-section">
+    <h2>检查范围</h2>
+    <dl class="kv">
+      <dt>合同</dt><dd>{{ report.scope.contract_name }}</dd>
+      <dt>合同版本</dt><dd>{{ report.scope.version_full }}</dd>
+      <dt>阶段</dt><dd>{{ report.scope.stage }}</dd>
+      <dt>事项</dt><dd>{{ report.scope.task_count }} 项签署前检查</dd>
+      <dt>政策</dt><dd>{{ report.scope.policy_labels|join("、") }}</dd>
+      <dt>解析</dt><dd>{{ report.scope.parse_label }} · 提取 {{ report.scope.characters }} 字 · {{ report.scope.blocks }} 块 · {{ report.scope.format }}</dd>
+      <dt>解析范围</dt><dd>{{ report.scope.coverage_scope }}</dd>
+      <dt>运行模式</dt><dd>{{ report.mode.label }}</dd>
+    </dl>
+    {% if report.scope.warnings %}
+      <div class="inline-warning">
+        <strong>解析与使用限制</strong>
+        <ul>{% for warning in report.scope.warnings %}<li>{{ warning }}</li>{% endfor %}</ul>
+      </div>
+    {% endif %}
+  </section>
+
+  {% if report.contract %}
+    <section class="report-section">
+      <h2>示例合同全文（含已定位引文高亮）</h2>
+      <p class="hint">以下为人工构造的完整虚构合同；高亮对应该报告中逐字定位的合同引文。不是 PDF 版面。</p>
+      <div class="contract-preview example-contract">
+        {% for block in report.contract.blocks %}
+          {% if block.kind == "h1" %}
+            <h3>{{ block.text }}</h3>
+          {% elif block.kind == "h2" %}
+            <h4>{{ block.text }}</h4>
+          {% else %}
+            <p>{% for seg in block.segments %}{% if seg.mark %}<mark>{{ seg.text }}</mark>{% else %}{{ seg.text }}{% endif %}{% endfor %}</p>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="report-section">
+    <h2>材料总览</h2>
+    <table class="report-table">
+      <thead><tr><th>材料</th><th>当前声明</th><th>说明</th></tr></thead>
+      <tbody>
+        {% for material in report.materials %}
+          <tr>
+            <td>{{ material.name }}</td>
+            <td>{{ material.status_label }}</td>
+            <td>{{ material.statement }}{% if material.file_name %}<br><small>已附文件：{{ material.file_name }}</small>{% endif %}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="hint">材料缺失不证明风险不存在；已提供也不证明内容充分。</p>
+  </section>
+
+  <section class="report-section">
+    <h2>逐项结果</h2>
+    {% for item in report.task_items %}
+      <article class="report-item">
+        <div class="report-item-head">
+          <h3>{{ item.number }}. {{ item.title }}</h3>
+          {{ pill(item.status) }}
+        </div>
+        {% if item.simulated %}
+          <p class="inline-note">流程演练：本项没有业务判断；以下内容只证明流程和定位链路。</p>
+        {% endif %}
+{% if item.finding is defined and item.finding.comparisons %}{% with finding=item.finding %}{% include "_comparisons.html" %}{% endwith %}
+{% elif item.finding is defined and item.finding.contract_fact %}
+<p><strong>合同怎么写：</strong>{{ item.finding.contract_fact }}</p>
+<p><strong>企业要求什么：</strong>{{ item.finding.enterprise_requirement }}</p>
+<p><strong>差异或判断理由：</strong>{{ item.finding.comparison_reason }}</p>
+<p><strong>建议怎样处理：</strong>{{ item.finding.recommendation }}</p>
+<p><strong>还需确认什么：</strong>{{ item.finding.pending_confirmation }}</p>
+{% endif %}
+        {% if item.candidate %}
+          <p><strong>候选：</strong>{{ item.candidate }}。候选不是法律结论，需人工核对证据支持程度。</p>
+        {% endif %}
+        {% if item.question %}
+          <p><strong>需要确认：</strong>{{ item.question }}</p>
+        {% endif %}
+        {% if item.reason %}
+          <p class="hint">{{ item.reason }}</p>
+        {% endif %}
+        {% if item.failure %}
+          <p class="inline-warning"><strong>本项无有效结果：</strong>{{ item.failure }}</p>
+        {% endif %}
+
+        <h4>证据摘录</h4>
+        {% if item.evidence.error %}
+          <p class="empty">{{ item.evidence.error }} 未形成可用证据。</p>
+        {% elif item.evidence.citations %}
+          <p class="hint">{{ item.evidence.notice }}</p>
+          {% for cite in item.evidence.citations %}
+            {{ citation_card(cite, interactive=False) }}
+          {% endfor %}
+        {% else %}
+          <p class="empty">没有通过严格定位的引用。</p>
+        {% endif %}
+
+        {% if item.requested_materials %}
+          <h4>需要补充或确认的材料</h4>
+          <ul class="material-inline">
+            {% for material in item.requested_materials %}
+              <li>{{ material.name }} <span class="pill pill-{{ material.tone }}">{{ material.status_label }}</span><span class="hint"> {{ material.statement }}</span></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <details class="diagnostic">
+          <summary>本项判断边界与程序状态</summary>
+          <dl class="kv">
+            <dt>适用范围</dt><dd>{{ item.applicability }}</dd>
+            <dt>政策边界</dt><dd>{{ item.exceptions }}</dd>
+            <dt>程序状态</dt><dd>{{ item.program_status }}</dd>
+          </dl>
+          <p>程序接受答复、引用定位和页面展示都不等于业务正确。</p>
+        </details>
+
+        {% if item.opinions %}
+          <h4>本事项人工意见</h4>
+          {% for opinion in item.opinions %}{{ opinion_card(opinion) }}{% endfor %}
+        {% endif %}
+      </article>
+    {% endfor %}
+  </section>
+
+  {% if report.opinions %}
+    <section class="report-section">
+      <h2>人工意见汇总</h2>
+      {% for opinion in report.opinions %}{{ opinion_card(opinion) }}{% endfor %}
+      <p class="hint">复核人标识由操作者自行填写，未经身份认证，不构成电子签名。意见独立追加，不覆盖模型结果。</p>
+    </section>
+  {% else %}
+    <section class="report-section">
+      <h2>人工意见</h2>
+      <p class="empty">尚无人工意见。报告不把“没有意见”写成“没有风险”。</p>
+    </section>
+  {% endif %}
+
+  <section class="report-section report-diagnostics">
+    <h2>运行信息与限制</h2>
+    <dl class="kv">
+      {% for label, value in report.diagnostics.lines %}
+        <dt>{{ label }}</dt><dd>{{ value }}</dd>
+      {% endfor %}
+    </dl>
+    <p>本报告是审查辅助记录，不是法律意见。失败、未执行、解析限制和运行模式均已保留；原始 JSON 仅作附加数据下载。</p>
+    <p class="report-footer-note">采购合同审查 · {{ report.generated_note }}</p>
+  </section>
+</article>

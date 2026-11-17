@@ -1,0 +1,9 @@
+{
+  "label": "SIMULATED",
+  "contract_text": "虚构开发案例，SIMULATED：签收仅核数量及外观，双方书面约定周一至周五为工作日日历；收货后2工作日核对数量外观、10工作日质量检验，技术规格、方法与合格范围见双方确认附件T1版本1，附件内容尚未核实。",
+  "materials": {
+    "approval_record": "unknown",
+    "technical_spec": "unknown"
+  },
+  "parse_coverage_complete": true
+}

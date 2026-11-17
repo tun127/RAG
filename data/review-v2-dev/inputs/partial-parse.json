@@ -1,0 +1,9 @@
+{
+  "label": "SIMULATED",
+  "contract_text": "虚构开发案例：仅成功提取：付款60自然日。",
+  "materials": {
+    "approval_record": "unknown",
+    "technical_spec": "unknown"
+  },
+  "parse_coverage_complete": false
+}

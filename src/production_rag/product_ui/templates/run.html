@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+{% from "_macros.html" import pill, opinion_card %}
+{% block main %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">第 3 步 · 执行与结果</p>
+    <h1>{{ view.scope.contract_name }}</h1>
+    <p class="record-meta">
+      <span class="mode-badge mode-{{ view.mode.tone }}">{{ view.mode.label }}</span>
+      <span class="pill pill-{{ view.status.tone }}">{{ view.status.label }}</span>
+      版本 <span title="{{ view.scope.version_full }}">{{ view.scope.version_short }}</span>
+      · {{ view.scope.stage }}
+    </p>
+  </div>
+  <div class="head-actions">
+    <a class="button button-small button-secondary" href="{{ view.report_href }}">可读报告</a>
+    <a class="button button-small button-secondary" href="{{ view.json_href }}">下载附加 JSON</a>
+    <a href="{{ view.home_href }}">返回首页</a>
+  </div>
+</div>
+
+<section class="summary-panel tone-{{ view.status.tone }}">
+  <div class="summary-main">
+    <span class="pill pill-{{ view.status.tone }}">{{ view.status.label }}</span>
+    <h2>{{ view.summary.headline }}</h2>
+    <p>{{ view.summary.subline }}</p>
+    <p class="hint">{{ view.summary.note }}</p>
+    <p class="hint">{{ view.status.detail }}</p>
+  </div>
+  <div class="summary-chips">
+    {% for chip in view.summary.chips %}
+      <div class="summary-chip chip-{{ chip.tone }}"><strong>{{ chip.value }}</strong><span>{{ chip.label }}</span></div>
+    {% endfor %}
+  </div>
+</section>
+
+{% if view.is_fixture %}
+<div class="alert alert-sim" role="status">
+  <strong>这是一次流程演练（SIMULATED）</strong>
+  <p>系统用固定替身答复走通了上传、材料、执行、证据、复核和导出，<strong>没有分析你上传的合同</strong>。六个事项不是六项业务发现，流程走通也不代表审查通过。</p>
+  <p>要查看有真实业务候选的结果形态，请打开 <a href="/example">示例报告</a>；需要真实判断时，请等服务端启用真实审查后重新提交。</p>
+</div>
+{% endif %}
+
+{% if view.status.tone == "running" %}
+<p class="refresh-note" role="status">页面每 3 秒只读取已保存进度，不会再次提交审查。后端没有细粒度进度时不显示百分比。</p>
+{% endif %}
+
+<div class="scope-grid">
+  <section class="panel">
+    <h2>本次检查了什么</h2>
+    <dl class="kv">
+      <dt>合同</dt><dd>{{ view.scope.contract_name }}</dd>
+      <dt>合同版本</dt><dd title="{{ view.scope.version_full }}">{{ view.scope.version_short }}</dd>
+      <dt>阶段</dt><dd>{{ view.scope.stage }}</dd>
+      <dt>事项</dt><dd>{{ view.scope.task_count }} 项签署前检查</dd>
+      <dt>政策</dt><dd>{{ view.scope.policy_labels|join("、") }}</dd>
+      <dt>解析</dt><dd>{{ view.scope.parse_label }} · 提取 {{ view.scope.characters }} 字 · {{ view.scope.blocks }} 块</dd>
+    </dl>
+    <p class="hint">{{ view.scope.coverage_scope }}</p>
+    {% if view.scope.warnings %}
+      <div class="inline-warning">
+        <strong>解析警告</strong>
+        <ul>{% for warning in view.scope.warnings %}<li>{{ warning }}</li>{% endfor %}</ul>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="panel">
+    <h2>材料总览</h2>
+    <p class="hint">材料只在这里统一展示一次；事项详情只显示政策要求或模型明确请求的材料，不猜测关联。</p>
+    <ul class="material-summary">
+      {% for material in view.materials %}
+        <li>
+          <div><strong>{{ material.name }}</strong> <span class="pill pill-{{ material.tone }}">{{ material.status_label }}</span></div>
+          <p class="record-meta">{{ material.statement }}{% if material.file_name %} · 已附文件：{{ material.file_name }}{% endif %}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>下一步能做什么</h2>
+    <ol class="next-list">
+      <li>从左侧选择一个事项，先读“当前事项为什么需要处理”。</li>
+      <li>在右侧核对合同事实与政策依据；定位有效不等于语义支持。</li>
+      <li>在当前事项下留下复核意见，再打开可读报告或下载附加 JSON。</li>
+    </ol>
+    {% if view.is_fixture %}
+      <p class="inline-note">本次结果没有真实业务判断，不要据此确认风险或修改真实合同。</p>
+    {% endif %}
+  </section>
+</div>
+
+{% if view.active %}
+<div class="workbench-grid {{ 'has-selection' if view.has_selection else '' }}">
+  <aside class="item-list" aria-label="检查事项列表">
+    <div class="item-list-head">
+      <h2>检查事项</h2>
+      <p class="hint">选择一项，右侧只展开当前事项。</p>
+    </div>
+    <nav>
+      {% for item in view.task_items %}
+        <a class="item-row {{ 'is-active' if item.is_active }}" href="/runs/{{ view.run_id }}?item={{ item.task_id }}" {% if item.is_active %}aria-current="true"{% endif %}>
+          <span class="item-number">{{ item.number }}</span>
+          <span class="item-body">
+            <strong>{{ item.title }}</strong>
+            <small>{{ item.one_line }}</small>
+          </span>
+          <span class="item-side">
+            <span class="pill pill-{{ item.status.tone }}">{{ item.status.label }}</span>
+            {% if item.opinion_count %}<small>{{ item.opinion_count }} 条意见</small>{% endif %}
+          </span>
+        </a>
+      {% endfor %}
+    </nav>
+  </aside>
+
+  <section class="item-detail" id="item-detail">
+    <a class="mobile-back" href="{{ view.back_href }}">← 返回事项列表</a>
+    <div class="detail-head">
+      <div>
+        <p class="eyebrow">事项 {{ view.active.number }} / {{ view.scope.task_count }}</p>
+        <h2>{{ view.active.task_title }}</h2>
+      </div>
+      <div class="detail-status">
+        <span class="pill pill-{{ view.active.status.tone }}">{{ view.active.status.label }}</span>
+        {% if view.active.candidate %}<span class="pill pill-{{ view.active.candidate_tone }}">{{ view.active.candidate }}</span>{% endif %}
+      </div>
+    </div>
+
+    {% if view.active.question %}
+      <section class="focus-block">
+        <h3>当前事项为什么需要处理</h3>
+        <p>{{ view.active.question }}</p>
+        {% if view.active.reason %}<p class="hint">{{ view.active.reason }}</p>{% endif %}
+      </section>
+    {% elif view.active.candidate %}
+      <section class="focus-block">
+        <h3>当前候选</h3>
+        <p><strong>{{ view.active.candidate }}</strong>。这是模型提出的候选，不是法律结论；请核对右侧证据和判断边界。</p>
+        {% if view.active.reason %}<p class="hint">{{ view.active.reason }}</p>{% endif %}
+      </section>
+    {% elif view.active.failure %}
+      <section class="focus-block focus-danger">
+        <h3>本项没有形成有效结果</h3>
+        <p>{{ view.active.failure }}</p>
+        <p class="hint">不能把“未审出结果”写成“未发现问题”。</p>
+      </section>
+    {% elif view.is_fixture %}
+      <section class="focus-block focus-sim">
+        <h3>流程演练记录</h3>
+        <p>本项只验证流程能否走通，没有模型业务判断，也没有针对你合同的具体问题。</p>
+      </section>
+    {% else %}
+      <section class="focus-block">
+        <h3>本项状态</h3>
+        <p>{{ view.active.status.label }}。{{ view.active.failure or "请查看执行状态与诊断。" }}</p>
+      </section>
+    {% endif %}
+
+    <div class="detail-grid">
+      <div class="detail-main">
+        <section>
+          <h3>判断边界</h3>
+          <dl class="kv">
+            <dt>适用范围</dt><dd>{{ view.active.applicability }}</dd>
+            <dt>政策边界</dt><dd>{{ view.active.exceptions }}</dd>
+          </dl>
+          {% if view.active.constraints %}
+            <ul class="constraint-list">
+              {% for constraint in view.active.constraints %}<li>{{ constraint }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+          {% if view.active.required_materials %}
+            <h4>本项政策的必需材料</h4>
+            <ul class="material-inline">
+              {% for material in view.active.required_materials %}
+                <li>{{ material.name }} <span class="pill pill-{{ material.tone }}">{{ material.status_label }}</span></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          {% if view.active.conditional_materials %}
+            <details class="diagnostic">
+              <summary>条件性材料（条件未确认时不启用）</summary>
+              <ul>
+                {% for rule in view.active.conditional_materials %}
+                  <li>{{ rule.condition }}：{{ rule.materials|join("、") }}（{{ rule.purpose }}）</li>
+                {% endfor %}
+              </ul>
+            </details>
+          {% endif %}
+        </section>
+
+        {% if view.active.requested_materials %}
+          <section>
+            <h3>需要补充或确认的材料</h3>
+            <ul class="material-inline">
+              {% for material in view.active.requested_materials %}
+                <li>
+                  <strong>{{ material.name }}</strong>
+                  <span class="pill pill-{{ material.tone }}">{{ material.status_label }}</span>
+                  <p class="hint">{{ material.statement }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+
+        <section>
+          <h3>下一步</h3>
+          <ol class="next-list">
+            {% for step in view.active.next_steps %}<li>{{ step }}</li>{% endfor %}
+          </ol>
+        </section>
+
+        <details class="diagnostic">
+          <summary>技术诊断与原始状态</summary>
+          <dl class="kv">
+            {% for label, value in view.diagnostics.lines %}
+              <dt>{{ label }}</dt><dd>{{ value }}</dd>
+            {% endfor %}
+            <dt>本项程序状态</dt><dd>{{ view.active.program_status }}</dd>
+          </dl>
+          <p>程序接受答复、引用定位和页面展示都不等于业务正确。原始 JSON 仅作附加下载。</p>
+          <p><a href="{{ view.json_href }}">下载附加 JSON</a> · <a href="{{ view.report_href }}">打开可读报告</a></p>
+        </details>
+      </div>
+
+      <div class="detail-evidence">
+        {% with evidence = view.active.evidence %}
+          {% include "_evidence.html" %}
+        {% endwith %}
+      </div>
+    </div>
+
+    <section class="review-section" id="review">
+      <h3>人工复核</h3>
+      <p class="hint">先核对上方的合同事实与政策依据，再记录你的决定。意见独立追加，不覆盖模型结果。</p>
+      <div class="review-layout">
+        <form method="post" action="{{ view.active.review.action }}" data-ajax data-kind="opinion">
+          <input type="hidden" name="token" value="{{ view.active.review.token }}">
+          <div class="field-grid">
+            <label>复核人（自行填写，未经认证）
+              <input name="reviewer" required maxlength="100" autocomplete="off">
+              <span class="field-error" data-error-for="reviewer"></span>
+            </label>
+            <label>决定
+              <select name="decision">
+                {% for decision in view.active.review.decisions %}
+                  <option value="{{ decision.value }}">{{ decision.label }}</option>
+                {% endfor %}
+              </select>
+              <span class="field-error" data-error-for="decision"></span>
+            </label>
+          </div>
+          <label>理由
+            <textarea name="note" required maxlength="5000" placeholder="写清你核对的事实、依据或仍待确认的问题"></textarea>
+            <span class="field-error" data-error-for="note"></span>
+          </label>
+          <p class="hint">{{ view.active.review.notice }}</p>
+          <button type="submit">{{ view.active.review.submit_label }}</button>
+          <p class="feedback" role="status"></p>
+        </form>
+
+        <div class="review-history">
+          <h4>本事项的意见历史</h4>
+          {% if view.active.opinions %}
+            {% for opinion in view.active.opinions %}{{ opinion_card(opinion) }}{% endfor %}
+          {% else %}
+            <p class="empty">本事项尚无人工意见。</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+{% else %}
+<div class="panel empty-state">
+  <h2>暂无检查事项</h2>
+  <p>这次运行没有保存任何事项结果。请返回首页查看运行状态，或联系管理员检查记录。</p>
+  <a class="button" href="/">返回首页</a>
+</div>
+{% endif %}
+{% endblock %}

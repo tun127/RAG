@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · 采购合同审查</title>
+  {% if refresh %}<meta http-equiv="refresh" content="3">{% endif %}
+  <link rel="stylesheet" href="/product-assets/product.css">
+  <script defer src="/product-assets/product.js"></script>
+</head>
+<body class="{{ body_class|default('') }}">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="app-header">
+    <a class="brand" href="/">采购合同审查</a>
+    <div class="header-meta">
+      {% if mode %}<span class="mode-badge mode-{{ mode.tone }}">{{ mode.label }}</span>{% endif %}
+      <span class="header-sub">企业采购 · 买方视角</span>
+    </div>
+  </header>
+  <div class="page">
+    {% if step %}{% include "_steps.html" %}{% endif %}
+    {% if view.saved %}<div class="flash" role="status">人工意见已保存；原模型结果和已有意见没有被覆盖。</div>{% endif %}
+    <main id="main" class="{% block main_class %}{% endblock %}">
+      {% if view.integration_simulated %}<p class="hint"><strong>SIMULATED</strong> · 服务端固定策略：{{ view.review_strategy }} · 仅离线流程验证</p>{% endif %}
+      {% if view.integration_live %}<p class="hint"><strong>LIVE</strong> · 服务端冻结策略：{{ view.review_strategy }} · PAY-01 有限真实复核</p>{% endif %}
+      {% block main %}{% endblock %}
+      {% if view.agent_skips %}<section class="panel">
+        {% for skipped in view.agent_skips %}
+        <p><strong>{{ skipped.task_id }}：未启动 Agent 复核</strong></p>
+        <p>{{ '首次正式校验未通过；原始答复及失败原因已保留，没有生成复核候选。' if skipped.reason == 'first_formal_validation_failed' else '首次执行遇到接口、用量或总时限异常；已停止后续真实请求并保留记录。' }}</p>
+        {% endfor %}
+      </section>{% endif %}
+      {% if view.agent_reviews %}{% include "_agent_process.html" %}{% endif %}
+    </main>
+  </div>
+  <footer class="app-footer">
+    <p>审查辅助工具，不构成法律意见，也不替代企业审批。所有候选、待确认事项和证据支持关系均需人工复核。</p>
+  </footer>
+</body>
+</html>

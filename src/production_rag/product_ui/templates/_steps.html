@@ -1,0 +1,9 @@
+<nav class="steps" aria-label="操作步骤">
+  <ol>
+    <li class="{{ 'is-current' if step == 1 else 'is-done' if step > 1 else '' }}"><span>1</span>上传合同</li>
+    <li class="{{ 'is-current' if step == 2 else 'is-done' if step > 2 else '' }}"><span>2</span>核对文本与材料</li>
+    <li class="{{ 'is-current' if step == 3 else 'is-done' if step > 3 else '' }}"><span>3</span>执行与结果</li>
+    <li class="{{ 'is-current' if step == 4 else 'is-done' if step > 4 else '' }}"><span>4</span>人工复核</li>
+    <li class="{{ 'is-current' if step == 5 else '' }}"><span>5</span>导出报告</li>
+  </ol>
+</nav>

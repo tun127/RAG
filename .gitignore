@@ -1,0 +1,44 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+!.env.example
+reports/
+data/runtime/
+data/smoke-*/
+ui/node_modules/
+ui/dist/
+.ruff_cache/
+
+# Local inputs, secrets, model assets and generated artefacts
+node_modules/
+*.log
+*.sqlite*
+*.db
+*.pem
+*.key
+*.p12
+*.pfx
+*.gguf
+*.safetensors
+*.bin
+data/private/
+data/uploads/
+data/contracts/
+data/patients/
+tmp/
+output/
+.vscode/
+
+# Prior research snapshots remain local; unrelated to the contract MVP.
+docs/maintenance-evidence/
+
+# Reviewed public originals and generated knowledge snapshots remain local
+data/contract-knowledge-candidate/local-runtime/
+
+data/local-assets/

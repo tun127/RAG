@@ -1,0 +1,18 @@
+<section class="panel">
+  {% for audit in view.agent_reviews %}
+  <p><strong>{{ audit.task_id }} · {{ audit.label }}</strong></p>
+  <details class="diagnostic">
+    <summary>查看 Agent 过程 · {{ "已介入" if audit.intervened else "未介入；以执行记录为准" }}</summary>
+    <p class="hint">{{ 'LIVE' if view.integration_live else 'SIMULATED' }} · 模型评审仅为模型意见，未被人工确认。首次原件独立保留。</p>
+    <p>执行信息缺失时不推断已调用模型；空对象表示历史记录未提供该阶段详情。</p>
+    <h3>首次判断与正式校验</h3><pre>{{ audit.first | default({}) | tojson(indent=2) }}</pre>
+    <pre>{{ audit.first_validation | default({}) | tojson(indent=2) }}</pre>
+    <h3>触发原因</h3><pre>{{ audit.discovery | default({}) | tojson(indent=2) }}</pre>
+    <h3>补查证据</h3><pre>{{ audit.checked_questions | default({}) | tojson(indent=2) }}</pre>
+    <h3>复核候选</h3><pre>{{ audit.candidate | default({}) | tojson(indent=2) }}</pre>
+    <h3>程序校验</h3><pre>{{ audit.candidate_v3_validation | default({}) | tojson(indent=2) }}</pre>
+    <h3>模型评审（模型意见）</h3><pre>{{ audit.semantic_review | default({}) | tojson(indent=2) }}</pre>
+    <p>停止原因：{{ audit.stop_reason }}</p>
+  </details>
+  {% endfor %}
+</section>

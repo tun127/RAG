@@ -1,0 +1,1941 @@
+{
+  "schema_version": "1.0",
+  "baseline": "ede86b237c705be32bf96014558de9fcafa73b10",
+  "review_date": "2026-11-08",
+  "documents": [
+    {
+      "document_id": "CK01",
+      "title": "中华人民共和国民法典",
+      "publisher": "全国人民代表大会",
+      "original_page_url": "https://www.spp.gov.cn/zdgz/202006/t20200602_463886.shtml",
+      "file_url": "https://www.spp.gov.cn/zdgz/202006/t20200602_463886.shtml",
+      "acquired_at": "2026-11-08T00:50:50.266954+00:00",
+      "document_type": "law",
+      "applicable_subjects_and_scenarios": "大陆民事买卖；需结合签署时间、强制规定及交易事实",
+      "topics": [
+        "合同内容",
+        "交付",
+        "验收",
+        "质保",
+        "变更解除",
+        "违约",
+        "附件效力"
+      ],
+      "source_family": "CK01",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": "2020-05-28",
+        "revision": null,
+        "effective": "2021-01-01",
+        "verification_basis": "正文通过日期、第一千二百六十条；未核实截至审查日修订情况",
+        "observed_date_strings": [
+          "2020-06-02",
+          "2020年5月28日",
+          "2021年1月1日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "偿后，有权向负有责任的药品上市许可持有人、生产者、血液提供机构追偿。\n第一千二百二十四条　患者在诊疗活动中受到损害，有下列情形之一的，医疗机构不承担赔偿责任：\n（一）患者",
+          "任。\n第一千二百四十三条　未经许可进入高度危险活动区域或者高度危险物存放区域受到损害，管理人能够证明已经采取足够安全措施并尽到充分警示义务的，可以减轻或者不承担责任。\n第",
+          "热线）\n未经本网书面授权，请勿转载、摘编或建立镜像，否则视为侵权。\n备案序号：京ICP备05026262号\n为了获得更好的使用，建议使用谷歌浏览器(chrome)、360"
+        ]
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第五百九十六条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://www.spp.gov.cn/zdgz/202006/t20200602_463886.shtml",
+      "file_type": "text/html",
+      "sha256": "baf60cd0e4f3e3ffc2ca6533731fc8faa246db0b47b694ef00fa0053cf56b462",
+      "local_original": "local-runtime/CK01.html",
+      "local_text": "local-runtime/CK01.txt",
+      "text_sha256": "f6571b164eea45a255dbaf327574a6c7ffcccea1ee0088e1f8d423147a15b63e",
+      "body_verified": true,
+      "body_characters": 111845,
+      "excerpt_file": "public-excerpts/CK01.json",
+      "excerpt_sha256": "1fc57dae869c3535d65bfce6f0bc02b222effaa0c923dda69f7346a3eab1fff7",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "合同内容",
+          "交付",
+          "验收",
+          "质保",
+          "变更解除",
+          "违约",
+          "附件效力"
+        ],
+        "relevant_sections": [
+          "第五百九十六条"
+        ],
+        "limitations": "大陆民事买卖；需结合签署时间、强制规定及交易事实",
+        "complements": [
+          "CK02",
+          "CK03",
+          "CK04"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK01-articles.json",
+      "structured_sha256": "d03c13d5c89dbe49a10ef0bb09f5abdf56117635c48cd2038bd1001f5db51837",
+      "article_units": 1260,
+      "development_classification": {
+        "category": "reference",
+        "reason": "买卖合同及合同通则直接相关；仅作指定2020版开发参考，不是企业制度"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "version_snapshot_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "selected_complete_ranges_verified",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "原网页明确未经授权勿转载摘编或镜像；本轮不分发原文，仅在本地研究；另核法律正文第五条边界"
+        },
+        "enterprise_applicability": {
+          "status": "reference",
+          "reason": "买卖合同及合同通则直接相关；仅作指定2020版开发参考，不是企业制度",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "enabled_local_version_snapshot",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK02",
+      "title": "保障中小企业款项支付条例",
+      "publisher": "国务院",
+      "original_page_url": "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2025/art_2610a93b60554b9c81d6e37c2bc8232f.html",
+      "file_url": "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2025/art_2610a93b60554b9c81d6e37c2bc8232f.html",
+      "acquired_at": "2026-11-08T00:50:50.266954+00:00",
+      "document_type": "regulation",
+      "applicable_subjects_and_scenarios": "机关事业单位和大型企业向中小企业采购；先确认企业规模",
+      "topics": [
+        "付款",
+        "验收",
+        "保证金"
+      ],
+      "source_family": "CK02",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": "2025-03-24",
+        "revision": "2025-03-17",
+        "effective": "2025-06-01",
+        "verification_basis": "正文国务院令802号及页面发布时间；不是现行目录证明",
+        "observed_date_strings": [
+          "2025-03-24",
+          "2024年10月18日",
+          "2025年6月1日",
+          "2025年3月17日",
+          "2020年7月5日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": []
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第九条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://www.miit.gov.cn/xwfb/gxdt/sjdt/art/2025/art_2610a93b60554b9c81d6e37c2bc8232f.html",
+      "file_type": "text/html; charset=utf-8",
+      "sha256": "3ee6f8b12670faadfa0b26614079752dcda0c1d77af1caccfaf18c922699af72",
+      "local_original": "local-runtime/CK02.html",
+      "local_text": "local-runtime/CK02.txt",
+      "text_sha256": "f8aa8277e889dac06a077dd38c280ce19626e9061c0643a17a4339eceec9fc61",
+      "body_verified": true,
+      "body_characters": 5493,
+      "excerpt_file": "public-excerpts/CK02.json",
+      "excerpt_sha256": "d7329bd7678218e8ee153b272d804c116a41273f942fad8366b79a65b4e3397b",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "付款",
+          "验收",
+          "保证金"
+        ],
+        "relevant_sections": [
+          "第九条"
+        ],
+        "limitations": "机关事业单位和大型企业向中小企业采购；先确认企业规模",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK02-articles.json",
+      "structured_sha256": "0ea512d688e0cbf6089d210211c58b9ed384c913fc190c427ddbae2bad9fa01b",
+      "article_units": 37,
+      "development_classification": {
+        "category": "reference",
+        "reason": "2025版适用于机关事业单位及大型企业向中小企业采购；实验必须提供订约规模事实"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "version_snapshot_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "selected_complete_ranges_verified",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "reference",
+          "reason": "2025版适用于机关事业单位及大型企业向中小企业采购；实验必须提供订约规模事实",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "enabled_local_version_snapshot",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK03",
+      "title": "买卖合同纠纷司法解释（2020修正）",
+      "publisher": "最高人民法院",
+      "original_page_url": "https://cicc.court.gov.cn/html/1/218/62/84/12840.html",
+      "file_url": "https://cicc.court.gov.cn/html/1/218/62/84/12840.html",
+      "acquired_at": "2026-11-08T00:50:50.266954+00:00",
+      "document_type": "judicial_interpretation",
+      "applicable_subjects_and_scenarios": "法院裁判适用；非企业审批权限依据",
+      "topics": [
+        "证据",
+        "违约责任",
+        "检验",
+        "质量"
+      ],
+      "source_family": "CK03",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": "2020-12-29",
+        "revision": "2020-12-23",
+        "effective": "2021-01-01",
+        "verification_basis": "CICC原站文章属性公布/施行日期及修正说明；2026-03-30为页面发布时间，不作法律生效日",
+        "observed_date_strings": [
+          "2026-03-30",
+          "2012年3月31日",
+          "2020年12月23日",
+          "2019年8月19日",
+          "2019年8月20日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "\n中华人民共和国最高人民法院 版权所有　京ICP备05023036号"
+        ]
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第一条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://cicc.court.gov.cn/html/1/218/62/84/12840.html",
+      "file_type": "text/html",
+      "sha256": "d525031bb5d137d6b874b21ede1d94d78a46d6b3360933fbb6f514eb12521461",
+      "local_original": "local-runtime/CK03.html",
+      "local_text": "local-runtime/CK03.txt",
+      "text_sha256": "28c937393a803ad40073fe671c4b69ed38815a228f0e5c4f8b5abcbd87ea577f",
+      "body_verified": true,
+      "body_characters": 5712,
+      "excerpt_file": "public-excerpts/CK03.json",
+      "excerpt_sha256": "358401abb0a4f273134efa95474b34b79f1871a15788f74085e72d6232b0528d",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "证据",
+          "违约责任",
+          "检验",
+          "质量"
+        ],
+        "relevant_sections": [
+          "第一条"
+        ],
+        "limitations": "法院裁判适用；非企业审批权限依据",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK03-articles.json",
+      "structured_sha256": "e5fb760de0b4298fbe3677c543ff0b5cb32b07fe4f280ccc41d4c39945c9d8ca",
+      "article_units": 33,
+      "development_classification": {
+        "category": "reference",
+        "reason": "最高法院原站载2020修正版及现行有效属性；用于证据、检验与违约的裁判参考"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "version_snapshot_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "selected_complete_ranges_verified",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "reference",
+          "reason": "最高法院原站载2020修正版及现行有效属性；用于证据、检验与违约的裁判参考",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "enabled_local_version_snapshot",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK04",
+      "title": "中华人民共和国产品质量法",
+      "publisher": "全国人大常委会",
+      "original_page_url": "https://www.cnipa.gov.cn/art/2019/7/31/art_1391_91782.html",
+      "file_url": "https://www.cnipa.gov.cn/art/2019/7/31/art_1391_91782.html",
+      "acquired_at": "2026-11-08T00:50:50.345799+00:00",
+      "document_type": "law",
+      "applicable_subjects_and_scenarios": "加工制作用于销售的产品；需核验后续修法状态",
+      "topics": [
+        "质量",
+        "质保售后",
+        "产品标识"
+      ],
+      "source_family": "CK04",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": "2018-12-29",
+        "effective": null,
+        "verification_basis": "正文第三次修正说明；后续修法待核",
+        "observed_date_strings": [
+          "2019-07-31",
+          "1993年2月22日",
+          "2000年7月8日",
+          "2009年8月27日",
+          "2018年12月29日",
+          "1993年9月1日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": []
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第二十六条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://www.cnipa.gov.cn/art/2019/7/31/art_1391_91782.html",
+      "file_type": "text/html; charset=UTF-8",
+      "sha256": "23cb56706b62b6a450d930512a38b74d772573b884a44c589d1851891f537268",
+      "local_original": "local-runtime/CK04.html",
+      "local_text": "local-runtime/CK04.txt",
+      "text_sha256": "5d0e50a6d81c4067eac116e17ec5b227f8ecca97b14a1114153c0348d25737f1",
+      "body_verified": true,
+      "body_characters": 8466,
+      "excerpt_file": "public-excerpts/CK04.json",
+      "excerpt_sha256": "e3e6a3a8cd35e767bfcb63dfc0653b2614bc98c5aebf018154394e8d4306f827",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "质量",
+          "质保售后",
+          "产品标识"
+        ],
+        "relevant_sections": [
+          "第二十六条"
+        ],
+        "limitations": "加工制作用于销售的产品；需核验后续修法状态",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK04-articles.json",
+      "structured_sha256": "22e4203b4b6d4e056391eae26f11b36cd6b39f9599062cedb111389e3c24d082",
+      "article_units": 74,
+      "development_classification": {
+        "category": "verification_missing",
+        "reason": "2018版本来源已取得，但存在后续修法线索，尚未完成现行版本比对，暂不纳入实验"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "verification_missing",
+          "reason": "2018版本来源已取得，但存在后续修法线索，尚未完成现行版本比对，暂不纳入实验",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK05",
+      "title": "企业内部控制基本规范",
+      "publisher": "财政部等五部门",
+      "original_page_url": "https://kjs.mof.gov.cn/zhengcefabu/200807/t20080704_55982.htm",
+      "file_url": "https://kjs.mof.gov.cn/zhengcefabu/200807/t20080704_55982.htm",
+      "acquired_at": "2026-11-08T00:50:50.345799+00:00",
+      "document_type": "control_norm",
+      "applicable_subjects_and_scenarios": "上市公司施行范围及非上市企业鼓励执行需核验",
+      "topics": [
+        "授权",
+        "审批",
+        "职责分离"
+      ],
+      "source_family": "CK05",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2017年11月21日",
+          "2009年7月1日",
+          "2008年07月04日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "中心\n中华人民共和国财政部  版权所有，如需转载，请注明来源",
+          "共和国财政部  版权所有，如需转载，请注明来源"
+        ]
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第二十九条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://kjs.mof.gov.cn/zhengcefabu/200807/t20080704_55982.htm",
+      "file_type": "text/html",
+      "sha256": "eefab1229aaddecfbba433a7fa7f2b78faada76626645b2d910c98943f253981",
+      "local_original": "local-runtime/CK05.html",
+      "local_text": "local-runtime/CK05.txt",
+      "text_sha256": "2dd2cd1a293d55966a77715f5f6a6b1a898fe1b0859ea0eb8af30136b521036a",
+      "body_verified": true,
+      "body_characters": 7235,
+      "excerpt_file": "public-excerpts/CK05.json",
+      "excerpt_sha256": "a306689489187dd25d5f747b19af9c9d9d3f11f91af1f6c7f2e8e7093aeffbaf",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "授权",
+          "审批",
+          "职责分离"
+        ],
+        "relevant_sections": [
+          "第二十九条"
+        ],
+        "limitations": "上市公司施行范围及非上市企业鼓励执行需核验",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK05-articles.json",
+      "structured_sha256": "6df5a291d1ebe56a0bd01acff317534661c5ae7351ad043f18f4fb69eb97627f",
+      "article_units": 50,
+      "development_classification": {
+        "category": "reference",
+        "reason": "授权职责分离的内控参考；上市及非上市执行边界另核，不是合同风险强制阈值"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "reference",
+          "reason": "授权职责分离的内控参考；上市及非上市执行边界另核，不是合同风险强制阈值",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK06",
+      "title": "企业内部控制应用指引第7号——采购业务",
+      "publisher": "财政部等五部门；商务部转载",
+      "original_page_url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=1632",
+      "file_url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=1632",
+      "acquired_at": "2026-11-08T00:50:50.372934+00:00",
+      "document_type": "control_guideline",
+      "applicable_subjects_and_scenarios": "内控规范体系适用主体；不能直接生成本企业金额权限",
+      "topics": [
+        "采购管理",
+        "供应商准入",
+        "付款",
+        "验收"
+      ],
+      "source_family": "CK06",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2010-04-15",
+          "2010年4月15日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "规文本来源于第三方及公开网络，转载时力求忠实原文，仅供参考。因技术条件及更新频率的限制，不对其准确性、完整性、时效性和适用性作保证，请以正式文本为准并自行核对。本网站不承"
+        ]
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第十一条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=1632",
+      "file_type": "text/html",
+      "sha256": "efeba31c2bef50d379b367f51e8b1f806aece1c34a561d2928fa2305a4af0af6",
+      "local_original": "local-runtime/CK06.html",
+      "local_text": "local-runtime/CK06.txt",
+      "text_sha256": "9e29f64d883d3e1a9eba9d76822866318f8ef3adba16ad6a7e527528e997d011",
+      "body_verified": true,
+      "body_characters": 2871,
+      "excerpt_file": "public-excerpts/CK06.json",
+      "excerpt_sha256": "1ae123054e6f220369e61472bf5f950c8c79706b83047f7f830efab149ed51b4",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "采购管理",
+          "供应商准入",
+          "付款",
+          "验收"
+        ],
+        "relevant_sections": [
+          "第十一条"
+        ],
+        "limitations": "内控规范体系适用主体；不能直接生成本企业金额权限",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK06-articles.json",
+      "structured_sha256": "02f098b6f82f011105baf279492a0960d18f023d1c19dc123172764da203472e",
+      "article_units": 16,
+      "development_classification": {
+        "category": "reference",
+        "reason": "采购全流程参考；执行主体取决于内控体系适用性，不产生企业自己的审批矩阵"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "reference",
+          "reason": "采购全流程参考；执行主体取决于内控体系适用性，不产生企业自己的审批矩阵",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK07",
+      "title": "上海对外经贸大学采购管理办法",
+      "publisher": "上海对外经贸大学",
+      "original_page_url": "https://www.suibe.edu.cn/zhtb/2021/1208/c16312a142813/page.htm",
+      "file_url": "https://www.suibe.edu.cn/zhtb/2021/1208/c16312a142813/page.htm",
+      "acquired_at": "2026-11-08T00:50:51.955527+00:00",
+      "document_type": "institution_policy",
+      "applicable_subjects_and_scenarios": "仅约束该校；金额和组织专属规定不能直接移植",
+      "topics": [
+        "采购",
+        "合同签订",
+        "验收"
+      ],
+      "source_family": "CK07",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2021-12-08",
+          "2018年12月12日",
+          "2021年11月10日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "机软件、操作和管理类系统、使用许可等。\n本办法所称服务，是指物资、工程、无形资产之外的其它采购对象，包括但不限于信息技术服务、物业管理、安保、招标代理、会计审计等委托服务",
+          "办法自颁布之日起执行。\n10\n版权所有©2011 上海对外经贸大学招投标办公室 电话：021-67702132"
+        ]
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第二十六条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://www.suibe.edu.cn/zhtb/2021/1208/c16312a142813/page.htm",
+      "file_type": "text/html",
+      "sha256": "ee6bc4e68ad60bd2e611f8ff40d50079f40a36a49e5287479829da134fefd70b",
+      "local_original": "local-runtime/CK07.html",
+      "local_text": "local-runtime/CK07.txt",
+      "text_sha256": "5ab0aa72ada4d11afc615f7df06bb5e8ab4d7744cbb4d84f16bbfc265532af2b",
+      "body_verified": true,
+      "body_characters": 4613,
+      "excerpt_file": "public-excerpts/CK07.json",
+      "excerpt_sha256": "1a202cbe2d972aaaee620fad57568cbd3e1463bd24cd6a5b7b67adb1c6794b8f",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "采购",
+          "合同签订",
+          "验收"
+        ],
+        "relevant_sections": [
+          "第二十六条"
+        ],
+        "limitations": "仅约束该校；金额和组织专属规定不能直接移植",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK07-articles.json",
+      "structured_sha256": "c7bc37b85615420339998b11033b831de19280a239c943f3c8d73a55cf1cb160",
+      "article_units": 40,
+      "development_classification": {
+        "category": "organization_design_only",
+        "reason": "仅约束该校；金额和组织专属规定不能直接移植"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "organization_design_only",
+          "reason": "仅约束该校；金额和组织专属规定不能直接移植",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK08",
+      "title": "清华大学深圳国际研究生院采购管理办法",
+      "publisher": "清华大学深圳国际研究生院",
+      "original_page_url": "https://gzzdjs.sigs.tsinghua.edu.cn/2026/0408/c154a237/page.htm",
+      "file_url": "https://gzzdjs.sigs.tsinghua.edu.cn/2026/0408/c154a237/page.htm",
+      "acquired_at": "2026-11-08T00:50:51.970443+00:00",
+      "document_type": "institution_policy",
+      "applicable_subjects_and_scenarios": "仅约束学院；审批岗位与时限需改编并批准",
+      "topics": [
+        "授权",
+        "变更解除",
+        "收货",
+        "质保"
+      ],
+      "source_family": "CK08",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2026-02-18",
+          "2016年12月7日",
+          "2018年12月10日",
+          "2020年5月14日",
+          "2020年10月20日",
+          "2024年1月10日",
+          "2024年11月25日",
+          "2026年1月19日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "清华园区\n邮编：518055\n版权所有@清华大学深圳国际研究生院 京ICP备15006448号 京公网安备 110402430053 号\nTop"
+        ]
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第二十一条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://gzzdjs.sigs.tsinghua.edu.cn/2026/0408/c154a237/page.htm",
+      "file_type": "text/html",
+      "sha256": "d0e5f619d3be1a58450ed12850c91c015bf0f452793297d950380d9f2ea92e36",
+      "local_original": "local-runtime/CK08.html",
+      "local_text": "local-runtime/CK08.txt",
+      "text_sha256": "8906aea1ed6fbed9c562ce1fec461814a0a4ee5785a18a4a6ca18cfefc0d32f7",
+      "body_verified": true,
+      "body_characters": 4019,
+      "excerpt_file": "public-excerpts/CK08.json",
+      "excerpt_sha256": "986c8a28c73ead983926a6716797b024cf1e2d0a5e65e32dc8f6fa363281bdf5",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "授权",
+          "变更解除",
+          "收货",
+          "质保"
+        ],
+        "relevant_sections": [
+          "第二十一条"
+        ],
+        "limitations": "仅约束学院；审批岗位与时限需改编并批准",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK08-articles.json",
+      "structured_sha256": "ee469800941c6ca3a06d9722dc0a8787cfecffa3f1c5f91d22ce6ddb25635619",
+      "article_units": 35,
+      "development_classification": {
+        "category": "organization_design_only",
+        "reason": "仅约束学院；审批岗位与时限需改编并批准"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "organization_design_only",
+          "reason": "仅约束学院；审批岗位与时限需改编并批准",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK09",
+      "title": "中国传媒大学合同管理办法",
+      "publisher": "中国传媒大学",
+      "original_page_url": "https://fnc.cuc.edu.cn/2026/0730/c14936a273052/page.htm",
+      "file_url": "https://fnc.cuc.edu.cn/2026/0730/c14936a273052/page.htm",
+      "acquired_at": "2026-11-08T00:50:51.977768+00:00",
+      "document_type": "institution_policy",
+      "applicable_subjects_and_scenarios": "仅约束该校；不仲裁倾向不能作为普通企业强制要求",
+      "topics": [
+        "合同审批",
+        "非标准条款",
+        "变更",
+        "归档",
+        "争议"
+      ],
+      "source_family": "CK09",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2026-07-30"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": []
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第三十四条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://fnc.cuc.edu.cn/2026/0730/c14936a273052/page.htm",
+      "file_type": "text/html",
+      "sha256": "62c8774e9375f5441a13eaa9c4c0b310cdc4e58e2f8227ab0b70d008ea58dbb2",
+      "local_original": "local-runtime/CK09.html",
+      "local_text": "local-runtime/CK09.txt",
+      "text_sha256": "0aec08ba7e7ac53e2b139f49e7267b549a6f4656c4cc9aee73309ad01f0b17e8",
+      "body_verified": true,
+      "body_characters": 7630,
+      "excerpt_file": "public-excerpts/CK09.json",
+      "excerpt_sha256": "6fdc9c2a16d1d9fa6f07ed181a3043b477309ef7f9f2fb6aa5125d7145f65dbe",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "合同审批",
+          "非标准条款",
+          "变更",
+          "归档",
+          "争议"
+        ],
+        "relevant_sections": [
+          "第三十四条"
+        ],
+        "limitations": "仅约束该校；不仲裁倾向不能作为普通企业强制要求",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK09-articles.json",
+      "structured_sha256": "312fa7c4fdefcb63bf732cb0c72d686ab572d10ded6ccb109cf0ecf9c99f8766",
+      "article_units": 63,
+      "development_classification": {
+        "category": "organization_design_only",
+        "reason": "仅约束该校；不仲裁倾向不能作为普通企业强制要求"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "organization_design_only",
+          "reason": "仅约束该校；不仲裁倾向不能作为普通企业强制要求",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK10",
+      "title": "重庆大学合同管理办法",
+      "publisher": "重庆大学",
+      "original_page_url": "https://office.cqu.edu.cn/info/1010/2632.htm",
+      "file_url": "https://office.cqu.edu.cn/info/1010/2632.htm",
+      "acquired_at": "2026-11-08T00:50:52.002100+00:00",
+      "document_type": "institution_policy",
+      "applicable_subjects_and_scenarios": "仅约束该校；校长办公会等权限不可直接移植",
+      "topics": [
+        "合同审查",
+        "授权",
+        "归档",
+        "审批"
+      ],
+      "source_family": "CK10",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认"
+      },
+      "usage_terms": {
+        "status": "not_checked_access_failed",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。"
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "not_acquired",
+      "relevant_sections": [
+        "第三十二条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "acquisition_status": "access_failed",
+      "sha256": null,
+      "file_type": "unknown",
+      "error": "HTTP Error 412: Precondition Failed",
+      "review_status": "excluded_access_failed",
+      "development_classification": {
+        "category": "verification_missing",
+        "reason": "原站访问失败，正文未取得"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "body_missing",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "not_checked",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "verification_missing",
+          "reason": "原站访问失败，正文未取得",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK11",
+      "title": "工业品买卖合同GF-2000-0101",
+      "publisher": "原国家工商行政管理局；武汉市场监管局公开",
+      "original_page_url": "https://scjgj.wuhan.gov.cn/bsfw/htgl_65/htfb/201705/t20170516_135402.shtml",
+      "file_url": "https://scjgj.wuhan.gov.cn/bsfw/htgl_65/htfb/201705/t20170516_135402.shtml",
+      "acquired_at": "2026-11-08T00:50:52.155130+00:00",
+      "document_type": "model_contract",
+      "applicable_subjects_and_scenarios": "自愿示范文本；旧法术语与现行民法典需对照，非强制条款",
+      "topics": [
+        "标准合同",
+        "附件",
+        "质保",
+        "争议解决"
+      ],
+      "source_family": "CK11",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2017-05-16"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": []
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第十四条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://scjgj.wuhan.gov.cn/bsfw/htgl_65/htfb/201705/t20170516_135402.shtml",
+      "file_type": "text/html",
+      "sha256": "edca006051359c284db65b6c269306bab16be1807f90f573d9ce023e12231e33",
+      "local_original": "local-runtime/CK11.html",
+      "local_text": "local-runtime/CK11.txt",
+      "text_sha256": "e904033e1951204a55e501bdf1c6cf177a03edc68b3850e1196a2a33e87fcf99",
+      "body_verified": true,
+      "body_characters": 1736,
+      "excerpt_file": "public-excerpts/CK11.json",
+      "excerpt_sha256": "fe2028fbe24a9df297fc046199a6b1d92ac16698998725ffb95a2bcc56fcbd1a",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "标准合同",
+          "附件",
+          "质保",
+          "争议解决"
+        ],
+        "relevant_sections": [
+          "第十四条"
+        ],
+        "limitations": "自愿示范文本；旧法术语与现行民法典需对照，非强制条款",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK11-articles.json",
+      "structured_sha256": "93dad4fcc0e5e93cc01d08e235d792981e09e37ff4ca07dd9a63c4b22c23fd75",
+      "article_units": 17,
+      "development_classification": {
+        "category": "verification_missing",
+        "reason": "GF2000旧示范文本存在旧法术语，尚未逐条改编核验，不用于实验检索"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "verification_missing",
+          "reason": "GF2000旧示范文本存在旧法术语，尚未逐条改编核验，不用于实验检索",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK12",
+      "title": "中华人民共和国政府采购法",
+      "publisher": "全国人大常委会",
+      "original_page_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_47b5807c40c040368eb5f13b489d6c43.html",
+      "file_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_47b5807c40c040368eb5f13b489d6c43.html",
+      "acquired_at": "2026-11-08T00:50:52.188873+00:00",
+      "document_type": "law",
+      "applicable_subjects_and_scenarios": "仅限政府采购适用条件；普通企业不适用其10%补充合同限制",
+      "topics": [
+        "变更",
+        "附件",
+        "归档"
+      ],
+      "source_family": "CK12",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2014年08月31日",
+          "2021-06-10",
+          "2002年6月29日",
+          "2014年8月31日",
+          "2003年1月1日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": []
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第四十九条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_47b5807c40c040368eb5f13b489d6c43.html",
+      "file_type": "text/html; charset=utf-8",
+      "sha256": "20831e2ba17e54de006e6653776fcada1936346432fb68c0f5c844e95cb0b1e7",
+      "local_original": "local-runtime/CK12.html",
+      "local_text": "local-runtime/CK12.txt",
+      "text_sha256": "597b0d4db75111c6eeb64f8bf2e8ee57ac967ac079ddc9067211a0215afb0ce0",
+      "body_verified": true,
+      "body_characters": 9537,
+      "excerpt_file": "public-excerpts/CK12.json",
+      "excerpt_sha256": "12bf749391e55c50097c47479cc45cd25d2b847d7089ea90da7b024adfaa6718",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "变更",
+          "附件",
+          "归档"
+        ],
+        "relevant_sections": [
+          "第四十九条"
+        ],
+        "limitations": "仅限政府采购适用条件；普通企业不适用其10%补充合同限制",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK12-articles.json",
+      "structured_sha256": "f93eb93784ca6d64cf75af3f857aee78e9fc1a0dc4ce0079b50b5e1387f5332f",
+      "article_units": 88,
+      "development_classification": {
+        "category": "out_of_scope",
+        "reason": "仅限政府采购适用条件；普通企业不适用其10%补充合同限制"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "out_of_scope",
+          "reason": "仅限政府采购适用条件；普通企业不适用其10%补充合同限制",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK13",
+      "title": "中华人民共和国政府采购法实施条例",
+      "publisher": "国务院",
+      "original_page_url": "https://www.mee.gov.cn/zcwj/gwywj/202001/t20200114_759319.shtml",
+      "file_url": "https://www.mee.gov.cn/zcwj/gwywj/202001/t20200114_759319.shtml",
+      "acquired_at": "2026-11-08T00:50:52.295493+00:00",
+      "document_type": "regulation",
+      "applicable_subjects_and_scenarios": "政府采购制度；不直接纳入普通企业生产检索",
+      "topics": [
+        "验收",
+        "归档",
+        "付款"
+      ],
+      "source_family": "CK13",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2015-02-27",
+          "2014年12月31日",
+          "2015年3月1日",
+          "2015年1月30日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "产建设兵团生态环境局\n全国排污许可证管理信息平台\n国家生态环境科技成果转化综合服务平台\n中国政府网\n国务院部门\n部系统门户网站群\n地方生态环境部门\n其他\n链接 ：\n全国人",
+          "网站声明\n网站地图\n联系我们\n版权所有：中华人民共和国生态环境部|ICP备案编号: 京ICP备05009132号\n网站标识码：bm17000009| 京公网安备 1104",
+          "102700072号\n手机版\n版权所有：中华人民共和国生态环境部\nICP备案编号: 京ICP备05009132号\n网站标识码：bm17000009\n京公网安备 11040"
+        ]
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第四十五条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://www.mee.gov.cn/zcwj/gwywj/202001/t20200114_759319.shtml",
+      "file_type": "text/html",
+      "sha256": "2f49f89bf77f59b7d398a6c8112b6e1b0bf1d7b10ae33975b84893f926d7b6f4",
+      "local_original": "local-runtime/CK13.html",
+      "local_text": "local-runtime/CK13.txt",
+      "text_sha256": "f7092194becc9e2b8db698219d57fc06de7ca143ded9ac41566976b5991ad1aa",
+      "body_verified": true,
+      "body_characters": 12807,
+      "excerpt_file": "public-excerpts/CK13.json",
+      "excerpt_sha256": "765fb12c8404c0ca0059760d6d9b7acb8dea7bfb10980d1c4f4a628ab0c21c8c",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "验收",
+          "归档",
+          "付款"
+        ],
+        "relevant_sections": [
+          "第四十五条"
+        ],
+        "limitations": "政府采购制度；不直接纳入普通企业生产检索",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK13-articles.json",
+      "structured_sha256": "f00328b3c2bb0a78fec9abdae61cfd678f73f2949793a8e5cd693cb38bffad0e",
+      "article_units": 79,
+      "development_classification": {
+        "category": "out_of_scope",
+        "reason": "政府采购制度；不直接纳入普通企业生产检索"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "out_of_scope",
+          "reason": "政府采购制度；不直接纳入普通企业生产检索",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK14",
+      "title": "政府采购需求管理办法",
+      "publisher": "财政部；上海发改委转载",
+      "original_page_url": "https://fgw.sh.gov.cn/ys-zfcg-1.3.1.1/20240325/64ee177fe6944c2fbaa409c3ec55a78f.html",
+      "file_url": "https://fgw.sh.gov.cn/ys-zfcg-1.3.1.1/20240325/64ee177fe6944c2fbaa409c3ec55a78f.html",
+      "acquired_at": "2026-11-08T00:50:52.359060+00:00",
+      "document_type": "procurement_norm",
+      "applicable_subjects_and_scenarios": "政府采购；仅借鉴需求与验收设计",
+      "topics": [
+        "需求",
+        "合同条件",
+        "履约验收"
+      ],
+      "source_family": "CK14",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2021年4月30日",
+          "2021年7月1日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": []
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第二十三条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://fgw.sh.gov.cn/ys-zfcg-1.3.1.1/20240325/64ee177fe6944c2fbaa409c3ec55a78f.html",
+      "file_type": "text/html; charset=utf-8",
+      "sha256": "32bb44c42485fd5a10933141c35f9ce02fc1a6725201b8cd0fd3aace31c85366",
+      "local_original": "local-runtime/CK14.html",
+      "local_text": "local-runtime/CK14.txt",
+      "text_sha256": "53c081364ad730448168c2836885a1017650a0534e7af056a2509d4b88de5eb9",
+      "body_verified": true,
+      "body_characters": 6537,
+      "excerpt_file": "public-excerpts/CK14.json",
+      "excerpt_sha256": "b773fb1fd43efe4ed9082e4f0391f987fb02e75e8df1366be68a9adad6984581",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "需求",
+          "合同条件",
+          "履约验收"
+        ],
+        "relevant_sections": [
+          "第二十三条"
+        ],
+        "limitations": "政府采购；仅借鉴需求与验收设计",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK14-articles.json",
+      "structured_sha256": "76019cfbd19ac8a6d4beb4b1556226cb2bf0b9234bdd011862835a36401271cc",
+      "article_units": 44,
+      "development_classification": {
+        "category": "out_of_scope",
+        "reason": "政府采购；仅借鉴需求与验收设计"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "out_of_scope",
+          "reason": "政府采购；仅借鉴需求与验收设计",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK15",
+      "title": "中华人民共和国招标投标法",
+      "publisher": "全国人大常委会",
+      "original_page_url": "https://www.nra.gov.cn/jglz/gcjg/fggz/202204/t20220405_292157.shtml",
+      "file_url": "https://www.nra.gov.cn/jglz/gcjg/fggz/202204/t20220405_292157.shtml",
+      "acquired_at": "2026-11-08T00:50:52.487127+00:00",
+      "document_type": "law",
+      "applicable_subjects_and_scenarios": "须确认交易是否属于招投标活动；不可推断普通询价均受约束",
+      "topics": [
+        "招标合同一致性",
+        "变更"
+      ],
+      "source_family": "CK15",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2014-01-01",
+          "1999年8月30日",
+          "2000年1月1日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "解读\n回应关切\n网上办事\n行政许可网上办理\n在线申请信息公开\n铁路机车车辆驾驶人员资格考试\n服务满意度评价\n专题专栏\n党的建设\n铁路工程信用\n铁路沿线安全环境治理成果图片",
+          "联系我们|网站声明|网站地图\n版权所有：国家铁路局地址：北京市复兴路6号院\n京ICP备19004382号-1　　政府网站标识码：BM69000001　 　京公网安备 11",
+          "政务微博\n微信公众号\n手机版\n版权所有：国家铁路局　地址：北京市复兴路6号院\n京ICP备19004382号-1　政府网站标识码：BM69000001\n京公网安备 1104"
+        ]
+      },
+      "organization_specific_requirements": false,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第四十六条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://www.nra.gov.cn/jglz/gcjg/fggz/202204/t20220405_292157.shtml",
+      "file_type": "text/html",
+      "sha256": "193f6a56610a9a750bf95a6805a32298de4b37a9f7b8175f1a45285069e4c976",
+      "local_original": "local-runtime/CK15.html",
+      "local_text": "local-runtime/CK15.txt",
+      "text_sha256": "20df8315aea7a7377f32a9a2767cdf52cccf4e161db92c410313ebe567f5a2e1",
+      "body_verified": true,
+      "body_characters": 8726,
+      "excerpt_file": "public-excerpts/CK15.json",
+      "excerpt_sha256": "7b1ee68b28619ec5e51f17ed959ec5a435e42a3f5719e7095f628041d928ab7b",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "招标合同一致性",
+          "变更"
+        ],
+        "relevant_sections": [
+          "第四十六条"
+        ],
+        "limitations": "须确认交易是否属于招投标活动；不可推断普通询价均受约束",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK15-articles.json",
+      "structured_sha256": "56d61ffbea4eaf46218dd3e67af655973008b1ea89318c20e2df4011be301dcc",
+      "article_units": 67,
+      "development_classification": {
+        "category": "out_of_scope",
+        "reason": "须确认交易是否属于招投标活动；不可推断普通询价均受约束"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "out_of_scope",
+          "reason": "须确认交易是否属于招投标活动；不可推断普通询价均受约束",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK16",
+      "title": "教育部直属高校经济活动内部控制指南（试行）",
+      "publisher": "教育部；中国石油大学转载",
+      "original_page_url": "https://sjc.upc.edu.cn/2023/0314/c20041a398062/page.htm",
+      "file_url": "https://sjc.upc.edu.cn/2023/0314/c20041a398062/page.htm",
+      "acquired_at": "2026-11-08T00:50:52.753072+00:00",
+      "document_type": "institution_guideline",
+      "applicable_subjects_and_scenarios": "教育部直属高校；只作组织流程设计参考",
+      "topics": [
+        "职责分离",
+        "供应商",
+        "归档",
+        "付款"
+      ],
+      "source_family": "CK16",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2016-05-05",
+          "2016年4月20日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "有效性，促进高校持续健康发展\n版权所有：中国石油大学（华东）审计处 E-mail：sjc@upc.edu.cn 办公地址： 青岛市黄岛区长江西路66号 邮编：266580"
+        ]
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第六条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://sjc.upc.edu.cn/2023/0314/c20041a398062/page.htm",
+      "file_type": "text/html",
+      "sha256": "38e0997933a91cf3930f36f974b9a181fc11bc98800ae1b95190b14720d36351",
+      "local_original": "local-runtime/CK16.html",
+      "local_text": "local-runtime/CK16.txt",
+      "text_sha256": "5b60277a6ea151f9971d85ce9ea27e1ead0ec2427d176d413af3c24d15de5821",
+      "body_verified": true,
+      "body_characters": 38805,
+      "excerpt_file": "public-excerpts/CK16.json",
+      "excerpt_sha256": "61f2d90c8686ffe55822bf47e4a573f4e7ba6bae9a1dc925d922ead23b204504",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "职责分离",
+          "供应商",
+          "归档",
+          "付款"
+        ],
+        "relevant_sections": [
+          "第六条"
+        ],
+        "limitations": "教育部直属高校；只作组织流程设计参考",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK16-articles.json",
+      "structured_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "article_units": 0,
+      "development_classification": {
+        "category": "organization_design_only",
+        "reason": "教育部直属高校；只作组织流程设计参考"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "organization_design_only",
+          "reason": "教育部直属高校；只作组织流程设计参考",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK17",
+      "title": "闽南师范大学合同管理办法",
+      "publisher": "闽南师范大学",
+      "original_page_url": "https://dyb.mnnu.edu.cn/info/1013/2829.htm",
+      "file_url": "https://dyb.mnnu.edu.cn/info/1013/2829.htm",
+      "acquired_at": "2026-11-08T00:50:52.764659+00:00",
+      "document_type": "institution_policy",
+      "applicable_subjects_and_scenarios": "仅约束该校；标准与非标准合同流程可供设计参考",
+      "topics": [
+        "非标准合同",
+        "合同审批",
+        "归档"
+      ],
+      "source_family": "CK17",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认",
+        "observed_date_strings": [
+          "2022年07月01日",
+          "2017年6月12日"
+        ]
+      },
+      "usage_terms": {
+        "status": "no_explicit_redistribution_license_verified",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。",
+        "observed_notices": [
+          "、营业执照、法人登记证书、经营许可证书等；\n2.合同对方的履约能力和资信情况（银行资信证明），必要时要求合同对方提供主要的财务报表、相应担保以及从事相关业务的业绩证明材料"
+        ]
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "HTML线性提取；仅核对指定条款存在；未验证表格关系、全文层级、附件或完整覆盖",
+      "relevant_sections": [
+        "第十八条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "http_status": 200,
+      "resolved_url": "https://dyb.mnnu.edu.cn/info/1013/2829.htm",
+      "file_type": "text/html",
+      "sha256": "cde1546013600b9e62e322e7731a91f2ea2f1033b35489258050330b4297430d",
+      "local_original": "local-runtime/CK17.html",
+      "local_text": "local-runtime/CK17.txt",
+      "text_sha256": "aae6ea25d6e4d22519d0df86b04ab4b3a28306527a45911c678d0151620a40a2",
+      "body_verified": true,
+      "body_characters": 5050,
+      "excerpt_file": "public-excerpts/CK17.json",
+      "excerpt_sha256": "8b1c70db5ac30cffa488dfb1b41e9b2e1062ba475dc092af8887d460cf35f6ba",
+      "acquisition_status": "body_acquired",
+      "review_status": "pending",
+      "editorial_review": {
+        "supporting_topics": [
+          "非标准合同",
+          "合同审批",
+          "归档"
+        ],
+        "relevant_sections": [
+          "第十八条"
+        ],
+        "limitations": "仅约束该校；标准与非标准合同流程可供设计参考",
+        "complements": [
+          "CK01"
+        ],
+        "potential_conflict": "各组织审批主体与时限不可合并；付款安排须先确认中小企业支付条例适用条件",
+        "duplicate_review": "标题、发布者和正文摘要不同；指引与上位规范关系需保留，不按更严格合并",
+        "coverage": "全文下载成功、指定条款存在；不是逐条法律核定"
+      },
+      "structured_file": "local-runtime/CK17-articles.json",
+      "structured_sha256": "7f3bf9bf84eb7468a241b04a531aab918956ad4d239ea71261ef11f003e61b39",
+      "article_units": 32,
+      "development_classification": {
+        "category": "organization_design_only",
+        "reason": "仅约束该校；标准与非标准合同流程可供设计参考"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "article_locator_only",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "local_research_only_no_redistribution",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "organization_design_only",
+          "reason": "仅约束该校；标准与非标准合同流程可供设计参考",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    },
+    {
+      "document_id": "CK18",
+      "title": "湖南工商大学集中采购管理办法",
+      "publisher": "湖南工商大学",
+      "original_page_url": "https://zcglc.hutb.edu.cn/gzzd/content_72221",
+      "file_url": "https://zcglc.hutb.edu.cn/gzzd/content_72221",
+      "acquired_at": "2026-11-08T00:50:52.945171+00:00",
+      "document_type": "institution_policy",
+      "applicable_subjects_and_scenarios": "仅约束该校；会议会审角色须企业采纳后方可使用",
+      "topics": [
+        "非标准条款",
+        "复杂合同会审",
+        "采购管理"
+      ],
+      "source_family": "CK18",
+      "derived_from": [],
+      "duplicate_of": null,
+      "classification": "public",
+      "validity_status": "pending_currentness_review",
+      "uncertainties": [
+        "公开页面不能证明截至2026-11-08无后续修订；尚未完成权威现行目录复核"
+      ],
+      "dates": {
+        "publication": null,
+        "revision": null,
+        "effective": null,
+        "verification_basis": "以下载正文日期线索为依据，日期语义待人工确认"
+      },
+      "usage_terms": {
+        "status": "not_checked_access_failed",
+        "git_original_allowed": false,
+        "basis": "未确认明确再分发许可；原件和全文只存Git忽略目录。简短摘录用于研究定位，不作为完整要求。"
+      },
+      "organization_specific_requirements": true,
+      "adoption": "待企业法务确认适用范围、制度所有人及授权矩阵后决定；本轮未采纳",
+      "retrieval_eligible": false,
+      "retrieval_reason": "仅研究，未采纳且现行性待核验",
+      "parse_coverage": "not_acquired",
+      "relevant_sections": [
+        "第三十八条"
+      ],
+      "relationships": "法律提供边界；内控补充流程；各校权限互不替代；示范文本不优先于法律",
+      "acquisition_status": "access_failed",
+      "sha256": null,
+      "file_type": "unknown",
+      "error": "HTTP Error 404: Not Found",
+      "review_status": "excluded_access_failed",
+      "development_classification": {
+        "category": "verification_missing",
+        "reason": "原站访问失败，正文未取得"
+      },
+      "verification_axes": {
+        "currency": {
+          "status": "not_fully_verified",
+          "gap": "不保证截至2026-11-08穷尽所有修订；按指定版本开发，正式使用须重新确认"
+        },
+        "parsing": {
+          "status": "body_missing",
+          "gap": "仅选定范围已检查首尾与整条；全站附件、复杂表格未覆盖"
+        },
+        "usage": {
+          "status": "not_checked",
+          "git_original_allowed": false,
+          "gap": "网站明确许可未取得；法律正文与网页编排分开，保持原件本地；不提供网站镜像"
+        },
+        "enterprise_applicability": {
+          "status": "verification_missing",
+          "reason": "原站访问失败，正文未取得",
+          "adopted": false
+        }
+      },
+      "experiment_reference_status": "not_enabled",
+      "production_status": "not_approved"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "material_id": "settlement_records",
+    "status": "provided",
+    "statement": "仅表示该文件已提供，不证明内容满足要求",
+    "path": "records.txt"
+  },
+  {
+    "material_id": "size_declaration",
+    "status": "provided",
+    "statement": "已提供虚构规模声明，仍需业务复核",
+    "path": "records.txt"
+  },
+  {
+    "material_id": "approval_record",
+    "status": "not_applicable",
+    "statement": "合同声明未申请例外；仍需核对适用条件"
+  },
+  {
+    "material_id": "acceptance_records",
+    "status": "unknown",
+    "statement": "未提供可核验材料；不能据此判断条款事实"
+  },
+  {
+    "material_id": "technical_spec",
+    "status": "provided",
+    "statement": "仅表示该文件已提供，不证明内容满足要求",
+    "path": "records.txt"
+  },
+  {
+    "material_id": "authority_record",
+    "status": "unknown",
+    "statement": "未提供可核验材料；不能据此判断条款事实"
+  },
+  {
+    "material_id": "condition_records",
+    "status": "not_applicable",
+    "statement": "合同声明未申请例外；仍需核对适用条件"
+  }
+]

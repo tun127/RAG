@@ -1,0 +1,11 @@
+{% for part in finding.comparisons %}
+<section class="comparison-part">
+<h4>{{ {"payment_algorithm":"付款触发与账期","payment_details":"价款要素与发票关系","payment_exception":"付款例外触发","layers":"验收分层与期限","technical":"技术附件与检验方法","remedies":"异常处理与付款衔接","process":"例外申请与批准程序","authority":"代理批准权限","coverage":"批准版本与签署前条件"}[part.part_id] }} · {{ {"compliant":"未发现偏离","deviation":"发现偏离","needs_review":"依据不足，无法判断","not_applicable":"有依据的不适用"}[part.conclusion] }}</h4>
+<p><strong>合同怎么写：</strong>{{ part.fact }}</p>
+<p><strong>企业要求什么：</strong>{{ part.requirement }}</p>
+<p><strong>差异或判断理由：</strong>{{ part.reason }}</p>
+<p><strong>建议怎样处理：</strong>{{ part.suggestion }}</p>
+<p><strong>还需确认什么：</strong>{{ part.pending or "无补充事项" }}</p>
+</section>
+{% endfor %}
+<p><strong>审批核实：</strong>{{ {"not_required":"无需审批","required_unknown":"需要审批但状态未知","provided_unverified":"已提供材料但尚未核实","verified":"有证据的已核实候选，待人工复核","trigger_unknown":"需要确认是否触发审批"}[finding.approval_status] }}</p>

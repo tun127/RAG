@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">第 2 步 · 核对文本与材料</p>
+    <h1>{{ view.contract.name }}</h1>
+    <p class="record-meta">
+      <span class="pill pill-{{ view.contract.tone }}">{{ view.contract.status_label }}</span>
+      上传于 {{ view.contract.time }} · 版本 <span title="{{ view.contract.version_full }}">{{ view.contract.version_short }}</span>
+    </p>
+  </div>
+  <div class="head-actions">
+    <details class="inline-details">
+      <summary>历史版本 / 上传新版本</summary>
+      <div class="details-body">
+        <div data-versions="{{ view.contract.task }}"><p class="hint">正在读取版本列表…</p></div>
+        <form method="post" action="/product/upload/{{ view.contract.task }}" enctype="multipart/form-data" data-ajax data-kind="upload">
+          <label>上传同一任务的新版本<input name="file" type="file" accept=".docx,.pdf" required></label>
+          <button type="submit" class="button-small">上传新版本</button>
+          <p class="feedback" role="status"></p>
+        </form>
+        <p class="hint">旧版本和旧运行保留原合同、证据与意见，不会被覆盖。</p>
+      </div>
+    </details>
+    <a href="/">返回首页</a>
+  </div>
+</div>
+
+{% if view.parse_error %}
+<div class="alert alert-danger" role="alert">
+  <strong>无法进入审查</strong>
+  <p>{{ view.parse_error }}</p>
+  <p>请在右侧“历史版本 / 上传新版本”重新上传可解析的 DOCX 或文本型 PDF。</p>
+</div>
+{% endif %}
+
+{% if view.warnings %}
+<div class="alert alert-warn" role="status">
+  <strong>解析范围与警告</strong>
+  <ul>{% for warning in view.warnings %}<li>{{ warning }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+
+<div class="confirm-layout">
+  <section class="panel preview-panel">
+    <div class="panel-head">
+      <div>
+        <h2>合同提取原文</h2>
+        <p class="hint">{{ view.coverage_scope }}</p>
+      </div>
+      <span class="step-chip">先核对文本</span>
+    </div>
+    <p class="hint">以下为固定提取文本，不是 PDF 页面坐标或版面还原。审查只基于这些文字。</p>
+    <div class="contract-preview" aria-label="合同提取原文">
+      {% for block in view.blocks %}
+        {% if block.kind == "table" %}
+          <table class="preview-table">
+            {% for row in block.rows %}
+              <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
+            {% endfor %}
+          </table>
+        {% else %}
+          <p>{{ block.text }}</p>
+        {% endif %}
+      {% else %}
+        <p class="empty">没有可读的提取文本。请重新上传或检查文件格式。</p>
+      {% endfor %}
+    </div>
+    <details class="diagnostic">
+      <summary>解析统计与限制</summary>
+      <dl class="kv">
+        <dt>格式</dt><dd>{{ view.parse_stats.format }}</dd>
+        <dt>提取字数</dt><dd>{{ view.parse_stats.characters }}</dd>
+        <dt>块数量</dt><dd>{{ view.parse_stats.blocks }}</dd>
+        <dt>解析状态</dt><dd>{{ view.parse_stats.label }}</dd>
+      </dl>
+      <p>仅接收清洁 DOCX 或文本型 PDF；扫描件无 OCR。部分覆盖只能审查已提取内容，不能据此认定完整条款缺失。</p>
+    </details>
+  </section>
+
+  <aside class="confirm-side">
+    {% if view.can_start %}
+    <form method="post" action="/start" enctype="multipart/form-data" data-ajax data-kind="start">
+      <input type="hidden" name="token" value="{{ view.token }}">
+      <input type="hidden" name="submission_id" value="{{ view.submission_id }}">
+      <input type="hidden" name="task" value="{{ view.task }}">
+      <input type="hidden" name="version" value="{{ view.version }}">
+      <input type="hidden" name="policy" value="{{ view.policy }}">
+      <input type="hidden" name="stage" value="{{ view.stage }}">
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>材料声明</h2>
+            <p class="hint">按实际材料状况填写。不确定就保留“尚未核实”；“不适用”是你的声明，系统仍需复核。已提供必须附固定文件，文件已提供也不代表内容充分。</p>
+          </div>
+          <span class="step-chip">可选</span>
+        </div>
+        <p class="inline-note">不要求尚未发生的交付、验收、发票或付款记录；本步骤只核对签署前材料。</p>
+        {% for material in view.materials %}
+          <details class="material-item">
+            <summary>
+              <span>{{ material.name }}</span>
+              <span class="pill pill-{{ material.tone }}" data-material-badge="{{ material.id }}">{{ material.status_label }}</span>
+            </summary>
+            <p class="hint">{{ material.purpose }}</p>
+            <label>材料状态
+              <select name="status_{{ material.id }}" data-material="{{ material.id }}">
+                <option value="unknown" selected>尚未核实</option>
+                <option value="provided">已提供（须附文件）</option>
+                <option value="missing">未提供</option>
+                <option value="not_applicable">已声明不适用</option>
+              </select>
+            </label>
+            <label>补充说明（可选）
+              <input name="statement_{{ material.id }}" maxlength="1000" placeholder="例如：文件已放在共享盘；不确定可留空">
+            </label>
+            <label class="file-field">附件
+              <input type="file" name="file_{{ material.id }}" accept=".txt,.md,.docx,.pdf" disabled>
+            </label>
+            <p class="hint">TXT/MD 仅接受 UTF-8 且不超过 64,000 字节；DOCX/文本 PDF 沿用主合同解析限制。</p>
+            <p class="field-error" data-error-for="status_{{ material.id }}"></p>
+            <p class="field-error" data-error-for="file_{{ material.id }}"></p>
+          </details>
+        {% endfor %}
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>本次检查范围</h2>
+            <p class="hint">签署前六项试点；政策为虚构演示政策，不是真实企业制度或法律文本。</p>
+          </div>
+        </div>
+        <p class="policy-line">政策：{{ view.policy_labels|join("、") }}</p>
+        <details class="scope-details">
+          <summary>展开六项检查范围与政策依据</summary>
+          <ol class="checklist">
+            {% for item in view.checklist %}
+              <li>
+                <strong>{{ item.title }}</strong>
+                <p>{{ item.question }}</p>
+                {% if item.required_materials %}
+                  <small>政策要求的材料：{{ item.required_materials|join("、") }}</small>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ol>
+        </details>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>执行方式</h2>
+            <p class="hint">请明确选择。默认未启用真实审查时，不会自动把流程演练当作真实结果。</p>
+          </div>
+        </div>
+        <div class="mode-options">
+          {% for mode in view.modes %}
+            <label class="mode-option mode-option-{{ mode.tone }} {{ 'is-disabled' if not mode.available else '' }}">
+              <input type="radio" name="execution_mode" value="{{ mode.value }}" {% if mode.checked %}checked{% endif %} {% if not mode.available %}disabled{% endif %}>
+              <span class="mode-option-body">
+                <strong>{{ mode.title }}</strong>
+                <span>{{ mode.description }}</span>
+                <small>{{ mode.note }}</small>
+              </span>
+            </label>
+          {% endfor %}
+        </div>
+        <p class="field-error" data-error-for="execution_mode"></p>
+        <details class="diagnostic">
+          <summary>本次调用与预算摘要</summary>
+          <p>{{ view.simulation_budget }}</p>
+          <ul>{% for line in view.budget_lines %}<li>{{ line }}</li>{% endfor %}</ul>
+          <p>真实审查是否可用由服务端决定；页面不能覆盖模型配置。失败不会自动切回模拟。</p>
+        </details>
+      </section>
+
+      <div class="submit-bar">
+        <button type="submit" class="button-primary" data-start-button>确认并开始流程演练</button>
+        <p class="feedback" role="status"></p>
+        <p class="hint" data-start-hint>流程演练不会分析你的合同，也不会产生业务判断。</p>
+      </div>
+    </form>
+    {% else %}
+    <section class="panel">
+      <h2>下一步</h2>
+      <p>解析未成功，不能提交审查。请按上面的解析原因修正文件，再从“历史版本 / 上传新版本”重新上传。</p>
+      <p class="hint">不需要填写技术字段，也不会要求你先判断全部触发条件。</p>
+    </section>
+    {% endif %}
+  </aside>
+</div>
+{% endblock %}

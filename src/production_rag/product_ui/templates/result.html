@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="simple-hero result-hero">
+  <h1>{{ view.name }}</h1>
+  <p class="meta-line">
+    <span class="mode-badge mode-{{ view.mode.tone }}">{{ view.mode.label }}</span>
+    <span class="pill pill-{{ view.status.tone }}">{{ view.status.label }}</span>
+    <span class="subtle">合同版本 {{ view.scope.version_short }} · 解析 {{ view.scope.parse_label }}</span>
+  </p>
+
+  <p class="headline">{{ view.summary.headline }}</p>
+  <p class="subline">{{ view.summary.subline }}</p>
+  {% if view.summary.chips %}
+    <p class="chips">
+      {% for chip in view.summary.chips %}<span class="chip chip-{{ chip.tone }}">{{ chip.label }} {{ chip.value }}</span>{% endfor %}
+    </p>
+  {% endif %}
+  <p class="hint">{{ view.summary.note }}</p>
+
+  <p class="actions">
+    <a class="button button-primary" href="{{ view.review_href }}">进入人工复核</a>
+    <a class="button button-secondary" href="{{ view.report_href }}?download=1">下载报告</a>
+    <a class="subtle" href="{{ view.export_href }}">JSON</a>
+    <a class="subtle" href="{{ view.home_href }}">回到首页</a>
+  </p>
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <h2>逐项结果</h2>
+    <span class="subtle">展开查看合同、企业要求及处理建议。</span>
+  </div>
+  <ol class="result-list">
+    {% for item in view.entries %}
+      <li class="result-item">
+        <details{% if item.open %} open{% endif %}>
+          <summary class="result-summary">
+            <span class="item-number">{{ item.number }}</span>
+            <span class="item-title">{{ item.title }}</span>
+            <span class="pill pill-{{ item.status.tone }}">{{ item.status.label }}</span>
+            <span class="item-line">{{ item.one_line }}</span>
+          </summary>
+          <div class="item-body">
+            {% if item.finding is defined and item.finding.comparisons %}{% with finding=item.finding %}{% include "_comparisons.html" %}{% endwith %}
+{% elif item.finding is defined and item.finding.contract_fact %}
+            <p><strong>合同怎么写：</strong>{{ item.finding.contract_fact }}</p>
+            <p><strong>企业要求什么：</strong>{{ item.finding.enterprise_requirement }}</p>
+            <p><strong>差异或判断理由：</strong>{{ item.finding.comparison_reason }}</p>
+            <p><strong>建议怎样处理：</strong>{{ item.finding.recommendation }}</p>
+            <p><strong>还需确认什么：</strong>{{ item.finding.pending_confirmation or "无补充事项" }}（审批：{{ item.finding.approval_status }}）</p>
+            {% else %}
+            <p><strong>检查什么：</strong>{{ item.check }}</p>
+            {% if item.candidate %}<p><strong>模型发现：</strong>{{ item.candidate }}</p>{% endif %}
+            {% if item.reason %}<p><strong>关注原因：</strong>{{ item.reason }}</p>{% endif %}
+            {% if item.question %}<p><strong>需要确认：</strong>{{ item.question }}</p>{% endif %}
+            {% endif %}
+            {% if item.failure %}<p class="inline-warning">{{ item.failure }}</p>{% endif %}
+            {% if item.diagnostic %}<details><summary>校验诊断</summary><p class="hint">{{ item.diagnostic }}；原始答复与校验记录见附加 JSON。</p></details>{% endif %}
+            {% if item.evidence.citations %}
+              <ul class="cite-compact">
+                {% for cite in item.evidence.citations %}
+                  <li>
+                    <p class="cite-meta">
+                      <span class="role-tag">{{ cite.role }}</span>
+                      {{ cite.document_label }} · 版本 {{ cite.version_short }}
+                    </p>
+                    <blockquote class="quote">{% for seg in cite.excerpt_segments %}{% if seg.mark %}<mark>{{ seg.text }}</mark>{% else %}{{ seg.text }}{% endif %}{% endfor %}</blockquote>
+                    {% if not cite.valid %}<p class="inline-warning">{{ cite.invalid_reason }}；未显示高亮，不能作为有效证据。</p>{% endif %}
+                    {% if cite.fixture_cross_topic %}<p class="inline-warning">这是流程夹具统一追加的付款摘录，不是本事项的业务依据，也没有模型语义支持。</p>{% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p class="empty">{{ item.evidence.error or "本项没有通过严格定位的引用。" }}</p>
+            {% endif %}
+            <p class="cite-links">
+              <a href="{{ item.evidence_href }}">打开完整原文与定位</a>
+              {% if item.opinion_count %}<span class="subtle">· 已有 {{ item.opinion_count }} 条人工意见</span>{% endif %}
+            </p>
+          </div>
+        </details>
+      </li>
+    {% else %}
+      <li class="empty">尚无逐项结果；请查看顶部实际执行状态。没有结果不代表未发现偏离。</li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="panel">
+  <details class="diagnostic">
+    <summary>版本、模式与限制</summary>
+    <ul class="plain-list">
+      <li>合同：{{ view.scope.contract_name }} · 版本 <span title="{{ view.scope.version_full }}">{{ view.scope.version_short }}</span></li>
+      <li>解析：{{ view.scope.parse_label }}（{{ view.scope.characters }} 字 / {{ view.scope.blocks }} 块，{{ view.scope.format }}）</li>
+      <li>阶段：{{ view.scope.stage }} · 政策：{{ view.scope.policy_labels|join('、') }}</li>
+      <li>检查项：{{ view.scope.task_count }} 项</li>
+      {% for warning in view.scope.warnings %}<li>{{ warning }}</li>{% endfor %}
+      <li>刷新、查看、导出只读取已有记录，不会重新调用模型；新开一次审查才是新操作。</li>
+      <li>候选不是法律结论，程序接受答复不等于业务通过；失败、未执行与材料不足分别标注，不能写成“未发现问题”。</li>
+    </ul>
+  </details>
+</section>
+{% endblock %}

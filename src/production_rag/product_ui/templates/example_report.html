@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block main_class %}report-page example-page{% endblock %}
+{% block main %}
+<div class="report-toolbar no-print">
+  <button type="button" data-print>打印 / 保存为 PDF</button>
+  <a href="/example">返回示例报告</a>
+</div>
+{% with report = view %}
+  {% include "report_content.html" %}
+{% endwith %}
+{% endblock %}

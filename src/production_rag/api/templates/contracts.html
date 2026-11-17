@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>合同结构核对 · M1.1 试验</title>
+  <style>
+    :root{color-scheme:light;font:16px/1.65 system-ui,"Microsoft YaHei",sans-serif;color:#203239;background:#f3f5f4}
+    *{box-sizing:border-box}body{margin:0}header{background:#173e3d;color:white;padding:26px max(24px,calc((100vw - 1180px)/2))}header a{color:#bfe5db}h1{font-size:26px;margin:4px 0}h2{font-size:20px;margin:0 0 14px}h3{font-size:17px}main{max-width:1180px;margin:24px auto;padding:0 20px}a{color:#096b66;overflow-wrap:anywhere}p{margin:8px 0}.card{background:white;border:1px solid #d7e0dc;border-radius:10px;padding:22px;margin-bottom:20px}.notice{background:#fff7e7;border-left:4px solid #b27413;padding:14px 18px}.grid{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px}.status{display:inline-block;border-radius:5px;background:#fff0cf;padding:3px 10px;font-weight:650}.failed,.rejected{background:#fce3df;color:#852e20}.parsed{background:#dff1e8;color:#195e42}button{background:#176960;color:white;border:0;border-radius:6px;padding:10px 18px;font:inherit;cursor:pointer}input{max-width:100%;margin:10px 0}small,.muted{color:#586b70}code{font-size:12px;overflow-wrap:anywhere}pre,.literal{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.8 system-ui,"Microsoft YaHei",sans-serif}pre{background:#f6f8f7;padding:14px;border:1px solid #dce3df;max-height:600px;overflow:auto}.block{border-bottom:1px solid #e3e8e5;padding:13px 0}.block:target{background:#fff3d6;outline:2px solid #c08c30}.block-meta{font-size:12px;color:#5c6d72;margin-bottom:5px;display:flex;justify-content:space-between;gap:14px}.heading{font-weight:700}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}td{border:1px solid #bacbc4;padding:8px;vertical-align:top;min-width:72px;white-space:pre-wrap;overflow-wrap:anywhere}td:target{outline:3px solid #c08c30;background:#fff3d6}ul{padding-left:21px}.versions{padding:0;list-style:none}.versions li{border-bottom:1px solid #e3e8e5;padding:8px 0}.version{font-size:12px}.back{display:block;margin-bottom:16px}details{margin:12px 0}summary{cursor:pointer}label{font-weight:600}footer{max-width:1180px;margin:30px auto;padding:0 20px;color:#586b70;font-size:13px}@media(max-width:760px){.grid{grid-template-columns:1fr}header{padding:20px}main{padding:0 12px}.card{padding:16px}}
+  </style>
+</head>
+<body>
+<header><small style="color:#c3e1d7">企业采购合同 · 本地试验工作台</small><h1>合同结构核对</h1><p>上传原件，核对正文结构与原文位置。此页面尚未实施合同风险审查。</p><a href="/contracts">新建解析任务</a></header>
+<main>
+{% if error %}
+  <section class="card notice"><h2>操作未完成</h2><p>{{ error }}</p><a href="/contracts">返回上传页面</a></section>
+{% elif not record %}
+  <section class="card"><h2>上传一份主文档</h2>
+    <p>支持清洁 DOCX、文本型 PDF。原始文件按任务保存在本机，不进入共享知识库或长期记忆。</p>
+    <form method="post" action="/contracts/upload" enctype="multipart/form-data"><label for="file">合同原件</label><br><input id="file" name="file" type="file" accept=".docx,.pdf" required><br><button type="submit">上传并解析</button></form>
+    <p class="muted">试验限制：文件 512 KiB；PDF 2 页；DOCX 展开 5 MiB；正文 12,000 字符；解析最长 20 秒。提交后等待结果。</p>
+  </section>
+  <section class="card notice"><h2>核对范围</h2><p>DOCX 无固定页码，使用正文块、表格、行与单元格定位。PDF 使用原件页码及提取文字区间，不提供未经验证的坐标。</p><p>扫描件、加密文件和带修订的文档不支持。页眉页脚、复杂版式、附件等未覆盖内容会明确显示；解析完成不代表材料齐全或审查通过。</p><p>本地演示入口默认无登录。请仅在可信本机使用；任务链接不构成独立用户权限。</p></section>
+{% else %}
+  {% set result = record.result %}
+  {% set base = '/contracts/' ~ record.task_id ~ '/versions/' ~ record.version_id %}
+  {% set api = '/api/contracts/' ~ record.task_id ~ '/versions/' ~ record.version_id %}
+  <section class="card">
+    <span class="status {{ result.status }}">{{ {'parsed':'支持范围内解析完成','partial':'部分覆盖 · 需核对','failed':'解析失败','rejected':'不支持或超限'}[result.status] }}</span>
+    <h2 style="margin-top:12px">{{ record.original_name }}</h2>
+    <p>{{ record.byte_size }} 字节 · 内容识别：{{ result.format }} · 已提取 {{ result.text_chars }} 字符</p>
+    <p class="version">任务 <code>{{ record.task_id }}</code><br>版本 <code>{{ record.version_id }}</code><br>原件 SHA-256 <code>{{ record.content_sha256 }}</code><br>解析器 {{ record.parser_version }}</p>
+    <p><a href="{{ api }}/original">下载此版本原件核对</a> · <a href="{{ api }}">查看结构数据</a> · <a href="/contracts/{{ record.task_id }}/alignment">选择标准与供应商版本，核对对应</a></p>
+    <p>材料完整性：{{ result.material_status }}<br>条款判断：{{ result.clause_assessment }}</p>
+    {% if result.coverage_scope %}<p class="muted">覆盖范围：{{ result.coverage_scope }}</p>{% endif %}
+    {% if result.issues %}<div class="notice"><strong>未支持内容与解析提示</strong><ul>{% for issue in result.issues %}<li>{{ issue.message }}{% if issue.location %}（位置 {{ issue.location }}）{% endif %} <small>[{{ issue.code }}]</small></li>{% endfor %}</ul></div>{% endif %}
+  </section>
+  {% if source %}
+    <section class="card">
+      <a class="back" href="{{ base }}#{{ source.anchor }}">← 返回预览中的这一位置</a><h2>原文定位核对</h2>
+      <p>当前版本：<code>{{ source.version_id }}</code></p>
+      <p>位置（索引从 0 开始，PDF 页码从 1 开始）：<code>{{ source.locator | tojson }}</code></p>
+      {% if source.page_text is defined %}
+        <p>PDF 第 {{ source.locator.page }} 页，提取文字区间 [{{ source.locator.start }}, {{ source.locator.end }})。以下为提取文字，不是原件版面坐标。</p>
+        <h3>定位文字</h3><pre>{{ source.text }}</pre>
+        <details><summary>查看该页全部提取文字</summary><pre>{{ source.page_text }}</pre></details>
+      {% else %}
+        <p>已重新读取此版本 DOCX 原件并核对文字。DOCX 不提供固定页码。</p>
+        <h3>此位置原文</h3><pre>{{ source.original_text }}</pre>
+        <details><summary>查看对应原件 XML 片段</summary><pre>{{ source.original_xml }}</pre></details>
+      {% endif %}
+      <a href="{{ api }}/original">下载原件查看实际版式</a>
+    </section>
+  {% else %}
+    <div class="grid"><aside>
+      <section class="card"><h2>版本记录</h2><ul class="versions">{% for v in versions %}<li><a href="/contracts/{{ record.task_id }}/versions/{{ v.version_id }}">{{ v.original_name }}</a><div class="version">{{ v.version_id[:12] }} · {{ v.created_at[:19] }} UTC</div></li>{% endfor %}</ul><form method="post" action="/contracts/{{ record.task_id }}/upload" enctype="multipart/form-data"><label for="revision">上传新版本</label><input id="revision" name="file" type="file" accept=".docx,.pdf" required><button type="submit">解析此版本</button></form><p class="muted">相同字节复用原版本；文件变化后保留旧版本，生成新定位。</p></section>
+      <section class="card"><h2>查看方式</h2><p>点击段落或单元格旁的“原文”核对来源。表格横向合并保留列跨度；纵向合并仅显示物理单元格及标记。</p><p>列表可见的自动编号尚未重建。PDF 文字顺序与表格关系需下载原件核对。</p></section>
+    </aside><section class="card"><h2>结构预览</h2>
+      {% if not result.blocks %}<p class="notice">没有可用结构。请查看上方失败原因，不能将此文件作为完整合同继续处理。</p>{% endif %}
+      {% for block in result.blocks %}
+        <div class="block" id="{{ block.anchor }}">
+          <div class="block-meta"><span>{% if block.locator.page %}PDF 第 {{ block.locator.page }} 页 · 字符 {{ block.locator.start }}—{{ block.locator.end }}{% else %}正文块 {{ block.locator.body_index }} · {{ {'paragraph':'段落','heading':'章节标题候选','list':'列表','table':'表格'}[block.kind] }}{% endif %}</span><a href="{{ base }}/source/{{ block.anchor }}">原文</a></div>
+          {% if block.kind == 'table' %}<div class="table-scroll"><table><tbody>{% for row in block.rows %}<tr>{% for cell in row %}<td id="{{ cell.anchor }}" colspan="{{ cell.colspan }}"><div>{{ cell.text }}</div><small>行 {{ cell.locator.row }} · 列 {{ cell.locator.grid_column }}{% if cell.vertical_merge %} · 纵向合并 {{ cell.vertical_merge }}{% endif %} · <a href="{{ base }}/source/{{ cell.anchor }}">原文</a></small></td>{% endfor %}</tr>{% endfor %}</tbody></table></div>
+          {% else %}<div class="literal {{ block.kind }}">{{ block.text }}</div>{% if block.kind == 'list' %}<small>列表层级 {{ block.level }}；自动编号显示值未重建。</small>{% endif %}{% endif %}
+        </div>
+      {% endfor %}
+    </section></div>
+  {% endif %}
+{% endif %}
+</main><footer>M1.1 试验：结构核对不等于合同审查。对应候选、人工确认与分组内精确文字差异已接入；规则核对、RAG 和风险报告尚未接入。</footer>
+</body></html>

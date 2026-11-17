@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="panel empty-state">
+  <p class="eyebrow">页面暂不可用</p>
+  <h1>无法打开此页面</h1>
+  <p class="alert alert-danger">{{ view.message }}</p>
+  <p>已有运行、证据和人工意见不会因为打开失败而改变。</p>
+  <a class="button" href="/">返回任务首页</a>
+</div>
+{% endblock %}

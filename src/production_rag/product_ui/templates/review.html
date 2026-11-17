@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% from "_macros.html" import opinion_card %}
+{% block main %}
+<section class="simple-hero review-hero">
+  <p class="subtle"><a href="{{ view.back_href }}">← 返回结果页</a></p>
+  <h1>人工复核：{{ view.name }}</h1>
+  <p class="meta-line">
+    <span class="mode-badge mode-{{ view.mode.tone }}">{{ view.mode.label }}</span>
+    <span class="pill pill-{{ view.status.tone }}">{{ view.status.label }}</span>
+  </p>
+  <p class="hint">复核意见独立追加，绑定本次运行和事项；不覆盖模型答复，也不构成电子签名。</p>
+</section>
+
+<section class="panel">
+  <div class="panel-head">
+    <h2>选择事项</h2>
+    <span class="subtle">一次只看一项；保存意见后回到当前事项。</span>
+  </div>
+  <nav class="item-nav">
+    {% for item in view.entries %}
+      <a class="item-nav-row{{ ' is-active' if item.is_active }}" href="/review/{{ view.run_id }}?item={{ item.task_id }}"{% if item.is_active %} aria-current="true"{% endif %}>
+        <span class="item-number">{{ item.number }}</span>
+        <strong>{{ item.title }}</strong>
+        <span class="pill pill-{{ item.status.tone }}">{{ item.status.label }}</span>
+        <span class="item-line">{{ item.one_line }}</span>
+        {% if item.opinion_count %}<span class="subtle">{{ item.opinion_count }} 条意见</span>{% endif %}
+      </a>
+    {% endfor %}
+  </nav>
+</section>
+
+<section class="panel" id="item-detail">
+  <div class="panel-head">
+    <h2>{{ view.active.number }}. {{ view.active.task_title }}</h2>
+    <span class="pill pill-{{ view.active.status.tone }}">{{ view.active.status.label }}</span>
+  </div>
+{% if view.active.finding is defined and view.active.finding.comparisons %}{% with finding=view.active.finding %}{% include "_comparisons.html" %}{% endwith %}
+{% elif view.active.finding is defined and view.active.finding.contract_fact %}
+<p><strong>合同怎么写：</strong>{{ view.active.finding.contract_fact }}</p>
+<p><strong>企业要求什么：</strong>{{ view.active.finding.enterprise_requirement }}</p>
+<p><strong>差异或判断理由：</strong>{{ view.active.finding.comparison_reason }}</p>
+<p><strong>建议怎样处理：</strong>{{ view.active.finding.recommendation }}</p>
+<p><strong>还需确认什么：</strong>{{ view.active.finding.pending_confirmation }}</p>
+{% endif %}
+  {% if view.active.candidate %}
+    <p><strong>当前结果：</strong>{{ view.active.candidate }}</p>
+  {% endif %}
+  {% if view.active.question %}
+    <p><strong>需要确认的事实：</strong>{{ view.active.question }}</p>
+  {% endif %}
+  {% if view.active.reason %}<p class="subtle">{{ view.active.reason }}</p>{% endif %}
+  {% if view.active.failure %}<p class="inline-warning">{{ view.active.failure }}</p>{% endif %}
+
+  <details class="diagnostic"{% if view.active.question %} open{% endif %}>
+    <summary>判断边界与本项必需材料</summary>
+    <ul class="plain-list">
+      <li><strong>适用范围：</strong>{{ view.active.applicability }}</li>
+      <li><strong>边界：</strong>{{ view.active.exceptions }}</li>
+      {% for material in view.active.required_materials %}
+        <li>必需材料：{{ material.name }} · {{ material.status_label }}</li>
+      {% endfor %}
+      {% for constraint in view.active.constraints %}<li>{{ constraint }}</li>{% endfor %}
+    </ul>
+  </details>
+
+  {% with evidence = view.active.evidence %}{% include "_evidence.html" %}{% endwith %}
+
+  <section class="review-block" id="review">
+    <h3>记录人工复核</h3>
+    <form method="post" action="{{ view.active.review.action }}" data-ajax data-kind="opinion">
+      <input type="hidden" name="token" value="{{ view.active.review.token }}">
+      <input type="hidden" name="next" value="review">
+      <div class="field">
+        <label for="reviewer">复核人标识（姓名或内部编号）</label>
+        <input id="reviewer" name="reviewer" required maxlength="100" autocomplete="off">
+        <p class="field-error" data-error-for="reviewer"></p>
+      </div>
+      <div class="field">
+        <label for="decision">决定</label>
+        <select id="decision" name="decision">
+          {% for decision in view.active.review.decisions %}
+            <option value="{{ decision.value }}">{{ decision.label }}</option>
+          {% endfor %}
+        </select>
+        <p class="field-error" data-error-for="decision"></p>
+      </div>
+      <div class="field">
+        <label for="note">理由</label>
+        <textarea id="note" name="note" required maxlength="5000" placeholder="写清你核对的事实、依据或仍待确认的问题"></textarea>
+        <p class="field-error" data-error-for="note"></p>
+      </div>
+      <p class="hint">{{ view.active.review.notice }}</p>
+      <button class="button button-primary" type="submit">{{ view.active.review.submit_label }}</button>
+      <p class="feedback" role="status"></p>
+    </form>
+  </section>
+
+  <section class="review-history">
+    <h3>本事项的意见历史</h3>
+    {% for opinion in view.active.opinions %}
+      {{ opinion_card(opinion) }}
+    {% else %}
+      <p class="empty">本事项暂无人工意见。</p>
+    {% endfor %}
+  </section>
+</section>
+
+<section class="panel">
+  <details class="diagnostic">
+    <summary>材料状态（本轮未提交的材料保持“尚未核实”）</summary>
+    <ul class="plain-list">
+      {% for material in view.materials %}
+        <li>{{ material.name }} · {{ material.status_label }}{% if material.file_name %} · {{ material.file_name }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+    <p class="hint">补充材料会改变审查输入，必须重新创建一次审查并重新调用模型；本版本不提供在此页补材料后直接重跑的入口，以免覆盖本次快照。</p>
+  </details>
+</section>
+{% endblock %}
